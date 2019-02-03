@@ -1,7 +1,7 @@
 <div class = "right">
 
   <%if current_user%>
-    <%=link_to @user.name + " " + @user.lastname, user_path(@user.id)  %>
+    <%=link_to @self_user.name + " " + @self_user.lastname, user_path(@self_user.id)  %>
     <%=link_to "sign_out", sign_out_path%>
   <%else %>
     <%=link_to "sign_up", sign_up_path%>
