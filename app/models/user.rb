@@ -21,4 +21,26 @@ class User < ApplicationRecord
 
   has_many :teachers, through: "student_services", class_name: "User", source: "teacher"
 
+  def admin?
+    self.user_role.status == "admin"
+  end
+
+
+  def services_of_student(teacher)
+    self.student_services.where(teacher: teacher)
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end

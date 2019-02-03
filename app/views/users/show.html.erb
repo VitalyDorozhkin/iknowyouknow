@@ -7,21 +7,40 @@
 
 <%=link_to "EDIT", edit_user_path(@user.id) %>
 <hr>
+
+
+
 <h1>Services</h1>
-<%@user.services.each  do |s|%>
-  <h2><%=s.name %></h2>
-  <h3>Description: <%= s.description%> </h3>
-  <h3>Subject: <%=s.subject.name %></h3>
-  <h3>Category: <%=s.category.name %></h3>
-  <h3>Price:<%=s.price %></h3>
+<%@user.services.each  do |service|%>
+  <h2><%=service.name %></h2>
+  <h3>Description: <%= service.description%> </h3>
+  <h3>Subject: <%=service.subject.name %></h3>
+  <h3>Category: <%=service.category.name %></h3>
+  <h3>Price:<%=service.price %></h3>
+  <h3>Students:</h3>
+  <%service.students.each do |student|%>
+    <h4><%=student.name + " " + student.lastname%></h4>
+  <%end%>
 <% end %>
 <hr>
-<h1>Students</h1>
-<%@user.students.uniq.each  do |s|%>
-  <h2><%=s.name + " " + s.lastname %></h2>
 
-  <h3>Age:<%=s.age %></h3>
+
+
+
+
+
+<h1>Students</h1>
+<%@user.students.uniq.each  do |student|%>
+  <h2><%=student.name + " " + student.lastname %></h2>
+
+  <h3>Age:<%=student.age %></h3>
+  <h3>Services:</h3>
+  <%student.services_of_student(@user).each do |service| %>
+    <h4><%=service.name %></h4>
+  <%end %>
 <% end %>
+
+
 
 <hr>
 <h1>Courses</h1>
@@ -31,13 +50,21 @@
   <h3>Subject: <%=s.subject.name %></h3>
   <h3>Category: <%=s.category.name %></h3>
   <h3>Price:<%=s.price %></h3>
+  <h3>Teacher:<%=s.teacher.name + " " + s.teacher.lastname %></h3>
 <% end %>
 <hr>
-<h1>Teachers</h1>
-<%@user.teachers.uniq.each  do |t|%>
-  <h2><%=t.name + " " + t.lastname %></h2>
 
-  <h3>Age:<%=t.age %></h3>
+
+<h1>Teachers</h1>
+<%@user.teachers.uniq.each  do |teacher|%>
+  <h2><%=teacher.name + " " + teacher.lastname %></h2>
+
+  <h3>Age:<%=teacher.age %></h3>
+  <h3>Services:</h3>
+  <%@user.services_of_student(teacher).each do |service| %>
+    <h4><%=service.name %></h4>
+  <%end %>
+
 <% end %>
 
 

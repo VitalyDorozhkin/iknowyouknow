@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :check_login, only: [ :show, :edit, :update, :destroy]
   before_action :check_no_login, only: [:sign_up, :new, :create]
-  before_action :admin?, :check_user, only: [:index]
+  before_action :admin?, only: [:index]
   before_action :init_user
   before_action :admin_or_self, only: [:show]
   before_action :self?, only: [:edit, :update, :destroy]
@@ -120,11 +120,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def check_user
-    if !User.find_by_id(params[:id])
-      go_to_user
-    end
-  end
+
 
   def self?()
     if current_user != params[:id].to_i
@@ -133,7 +129,7 @@ class UsersController < ApplicationController
   end
 
   def admin_or_self
-    if User.find(current_user).user_role.status != "admin" && current_user != params[:id].to_i || check_user
+    if User.find(current_user).user_role.status != "admin" && current_user != params[:id].to_i || check_login
       go_to_user
     end
   end
