@@ -3,6 +3,9 @@
   <%if current_user%>
     <%=link_to @self_user.name + " " + @self_user.lastname, user_path(@self_user.id)  %>
     <%=link_to "sign_out", sign_out_path%>
+    <br>
+    <%=link_to "all services", services_path%>
+    <%=link_to "new service", new_service_path%>
   <%else %>
     <%=link_to "sign_up", sign_up_path%>
     <%=link_to "registration", new_user_path%>

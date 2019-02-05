@@ -6,8 +6,14 @@
   <h3>Subject: <%=service.subject.name %></h3>
   <h3>Category: <%=service.category.name %></h3>
   <h3>Price:<%=service.price %></h3>
-  <h3>Students:</h3>
-  <%service.students.each do |student|%>
-    <h4><%=link_to student.name + " " + student.lastname, user_path(student.id)%></h4>
+  <%if service.teacher.id == @self_user.id %>
+    <h3>Students:</h3>
+    <div class="hover-content">
+      <%service.students.each do |student|%>
+        <h4><%=link_to student.name + " " + student.lastname, user_path(student.id)%></h4>
+      <%end %>
+    </div>
+
   <%end%>
+
 <% end %>

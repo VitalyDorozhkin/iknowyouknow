@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
 .right{
     position: absolute;
     right: 10px;
@@ -35,6 +37,23 @@ h6:hover + .hover-content,
     max-height: 999px;
     transition: 500ms ease-in;
 }
-
+body{
+    color: white;
+    background: #0e83cd;
+    font-family: Lato, serif;
+}
+a{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    background-color: #4495de;
+    margin: 2px;
+    padding: 2px;
+    transition: 400ms;
+}
+a:hover{
+    transform: scale(1.05);
+    transition: 400ms;
+}
 
 

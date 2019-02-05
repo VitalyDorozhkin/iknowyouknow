@@ -13,9 +13,12 @@
 
 <%if @service.teacher_id == current_user %>
   <h3>Students:</h3>
-  <%@service.students.each do |student|%>
-    <h4><%= link_to student.name + " " + student.lastname, user_path(student.id)%></h4>
-  <%end%>
+  <div class="hover-content">
+    <%@service.students.each do |student|%>
+      <h4><%= link_to student.name + " " + student.lastname, user_path(student.id)%></h4>
+    <%end%>
+  </div>
+
   <%= link_to "EDIT", edit_service_path(@service.id) %>
   <%= link_to "DELETE", service_path(@service.id), method: "DELETE" %>
 <%elsif !@self_user.student_service_ids.include?(@service.id)%>
