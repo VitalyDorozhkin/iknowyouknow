@@ -1,0 +1,32 @@
+
+
+
+
+<h2><%=@service.name %></h2>
+<h3>Teacher:<%= link_to @service.teacher.name + " " + @service.teacher.lastname, user_path(@service.teacher.id) %></h3>
+<h3>Description: <%= @service.description%> </h3>
+<h3>Subject: <%=@service.subject.name %></h3>
+<h3>Category: <%=@service.category.name %></h3>
+<h3>Price:<%=@service.price %></h3>
+
+
+
+<%if @service.teacher_id == current_user %>
+  <h3>Students:</h3>
+  <%@service.students.each do |student|%>
+    <h4><%= link_to student.name + " " + student.lastname, user_path(student.id)%></h4>
+  <%end%>
+  <%= link_to "EDIT", edit_service_path(@service.id) %>
+  <%= link_to "DELETE", service_path(@service.id), method: "DELETE" %>
+<%elsif !@self_user.student_service_ids.include?(@service.id)%>
+  <%= link_to "JOIN", new_order_path(service_id: @service.id) %>
+<%end %>
+
+
+
+
+
+
+
+
+

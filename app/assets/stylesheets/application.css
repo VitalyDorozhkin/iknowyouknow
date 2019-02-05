@@ -19,3 +19,22 @@
     border: 1px solid black;
     border-radius: 3px;
 }
+.hover-content{
+    max-height: 0;
+    overflow: hidden;
+    transition: 1000ms;
+}
+
+h1:hover + .hover-content,
+h2:hover + .hover-content,
+h3:hover + .hover-content,
+h4:hover + .hover-content,
+h5:hover + .hover-content,
+h6:hover + .hover-content,
+.hover-content:hover{
+    max-height: 999px;
+    transition: 500ms ease-in;
+}
+
+
+

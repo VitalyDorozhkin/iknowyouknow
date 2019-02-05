@@ -4,70 +4,96 @@
 <h2>description: <%=@user.description %></h2>
 <h6>login: <%=@user.login%></h6>
 <h6>password: <%=@user.password%></h6>
+<%if @user.id == current_user %>
 
-<%=link_to "EDIT", edit_user_path(@user.id) %>
+  <%= link_to "EDIT", edit_user_path(@user.id) %>
+  <%= link_to "DELETE", user_path(@user.id), method: "DELETE" %>
+<%end %>
+
 <hr>
 
 
 
 <h1>Services</h1>
-<%@user.services.each  do |service|%>
-  <h2><%=service.name %></h2>
-  <h3>Description: <%= service.description%> </h3>
-  <h3>Subject: <%=service.subject.name %></h3>
-  <h3>Category: <%=service.category.name %></h3>
-  <h3>Price:<%=service.price %></h3>
-  <h3>Students:</h3>
-  <%service.students.each do |student|%>
-    <h4><%=student.name + " " + student.lastname%></h4>
-  <%end%>
-<% end %>
-<hr>
+<div class="hover-content">
+  <%@user.services.each  do |service|%>
+    <h2><%=link_to service.name, service_path(service.id) %></h2>
+    <h3>Description: <%= service.description%> </h3>
+    <h3>Subject: <%=service.subject.name %></h3>
+    <h3>Category: <%=service.category.name %></h3>
+    <h3>Price:<%=service.price %></h3>
+    <%if @user ==  @self_user%>
+      <h3>Students:</h3>
+      <div class="hover-content">
+      <%service.students.each do |student|%>
+        <h4><%=link_to student.name + " " + student.lastname, user_path(student.id)%></h4>
+      <%end%>
+      </div>
+    <%end %>
+  <% end %>
+  <hr>
+</div>
 
 
 
 
-
-
-<h1>Students</h1>
-<%@user.students.uniq.each  do |student|%>
-  <h2><%=student.name + " " + student.lastname %></h2>
-
-  <h3>Age:<%=student.age %></h3>
-  <h3>Services:</h3>
-  <%student.services_of_student(@user).each do |service| %>
-    <h4><%=service.name %></h4>
-  <%end %>
-<% end %>
+<%if @user ==  @self_user%>
 
 
 
-<hr>
-<h1>Courses</h1>
-<%@user.student_services.each  do |s|%>
-  <h2><%=s.name %></h2>
-  <h3>Description: <%= s.description%> </h3>
-  <h3>Subject: <%=s.subject.name %></h3>
-  <h3>Category: <%=s.category.name %></h3>
-  <h3>Price:<%=s.price %></h3>
-  <h3>Teacher:<%=s.teacher.name + " " + s.teacher.lastname %></h3>
-<% end %>
-<hr>
+
+  <h1>Students</h1>
+  <div class="hover-content">
+    <%@user.students.uniq.each  do |student|%>
+      <h2><%=link_to student.name + " " + student.lastname, user_path(student.id) %></h2>
+
+      <h3>Age:<%=student.age %></h3>
+      <h3>Services:</h3>
+      <%student.services_of_student(@user).each do |service| %>
+        <h4><%=link_to service.name, service_path(service.id) %></h4>
+      <%end %>
+    <% end %>
+  </div>
 
 
-<h1>Teachers</h1>
-<%@user.teachers.uniq.each  do |teacher|%>
-  <h2><%=teacher.name + " " + teacher.lastname %></h2>
-
-  <h3>Age:<%=teacher.age %></h3>
-  <h3>Services:</h3>
-  <%@user.services_of_student(teacher).each do |service| %>
-    <h4><%=service.name %></h4>
-  <%end %>
-
-<% end %>
 
 
+  <hr>
+  <h1>Courses</h1>
+  <div class="hover-content">
+    <%@user.student_services.each  do |s|%>
+      <h2><%=link_to s.name, service_path(s.id) %></h2>
+      <h3>Description: <%= s.description%> </h3>
+      <h3>Subject: <%=s.subject.name %></h3>
+      <h3>Category: <%=s.category.name %></h3>
+      <h3>Price:<%=s.price %></h3>
+      <h3>Teacher:<%=link_to s.teacher.name + " " + s.teacher.lastname, user_path(s.teacher.id) %></h3>
+    <% end %>
+    <hr>
+  </div>
+
+
+
+  <h1>Teachers</h1>
+  <div class="hover-content">
+    <%@user.teachers.uniq.each  do |teacher|%>
+      <h2><%=teacher.name + " " + teacher.lastname %></h2>
+
+      <h3>Age:<%=teacher.age %></h3>
+      <h3>Services:</h3>
+      <div class="hover-content">
+        <%@user.services_of_student(teacher).each do |service| %>
+          <h4><%=link_to service.name, service_path(service.id)%></h4>
+        <%end %>
+      </div>
+      </div>
+
+    <% end %>
+
+    <%= link_to "Your orders", orders_path(sort: "student") %>
+    <%= link_to "Orders to you", orders_path(sort: "teacher") %>
+
+<%end %>
 
 
 

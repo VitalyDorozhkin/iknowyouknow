@@ -1,0 +1,7 @@
+<h1>Orders</h1>
+<%@orders.each  do |order|%>
+  <h2>Teacher:<%=link_to order.teacher.name + " " + order.teacher.lastname, user_path(order.teacher.id) %></h2>
+  <h2>Service:<%=link_to order.service.name, service_path(order.service.id) %></h2>
+  <h2>Student:<%=link_to order.student.name + " " + order.student.lastname, user_path(order.student.id) %></h2>
+  <hr>
+<% end %>

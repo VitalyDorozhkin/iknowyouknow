@@ -2,12 +2,7 @@ class UsersController < ApplicationController
   before_action :check_login, only: [ :show, :edit, :update, :destroy]
   before_action :check_no_login, only: [:sign_up, :new, :create]
   before_action :admin?, only: [:index]
-  before_action :init_user
-  before_action :admin_or_self, only: [:show]
   before_action :self?, only: [:edit, :update, :destroy]
-
-
-
 
 
   def index
@@ -17,7 +12,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
   def create
-
     @user = User.create(
         name: params[:user][:name],
         lastname: params[:user][:lastname],
@@ -61,6 +55,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).delete
+    redirect_to sign_out_path
   end
 
   def show
@@ -80,6 +75,7 @@ class UsersController < ApplicationController
 
   def sign_out
     session[:user_id] = nil
+    @self_user = nil
     redirect_to sign_up_path
 
   end
@@ -94,11 +90,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def check_login
-    if current_user == nil
-      redirect_to sign_up_path
-    end
-  end
+
 
   def check_no_login
     if current_user != nil
@@ -140,11 +132,7 @@ class UsersController < ApplicationController
 
 
 
-  def init_user
-    if current_user
-      @self_user = User.find(current_user)
-    end
-  end
+
 
   def go_to_user
     redirect_to user_path(current_user)

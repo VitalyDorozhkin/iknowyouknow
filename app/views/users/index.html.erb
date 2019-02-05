@@ -1,6 +1,6 @@
 <%@users.each do |u| %>
   <div>
-    <h2><%=u.name + " " + u.lastname%></h2>
+    <h2><%=link_to u.name + " " + u.lastname, user_path(u.id)%></h2>
     <h3>Age: <%=u.age%></h3>
     <h3>Rating:<%=u.rating%></h3>
     <h3>Awargs<%=u.awards%></h3>

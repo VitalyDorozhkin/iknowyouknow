@@ -1,0 +1,13 @@
+<h1>Services</h1>
+<%@services.each  do |service|%>
+  <h2><%=link_to service.name, service_path(service.id) %></h2>
+  <h3>Teacher:<%= link_to service.teacher.name + " " + service.teacher.lastname, user_path(service.teacher.id) %></h3>
+  <h3>Description: <%= service.description%> </h3>
+  <h3>Subject: <%=service.subject.name %></h3>
+  <h3>Category: <%=service.category.name %></h3>
+  <h3>Price:<%=service.price %></h3>
+  <h3>Students:</h3>
+  <%service.students.each do |student|%>
+    <h4><%=link_to student.name + " " + student.lastname, user_path(student.id)%></h4>
+  <%end%>
+<% end %>

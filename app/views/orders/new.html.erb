@@ -1,0 +1,16 @@
+
+<%= form_for @order do |f| %>
+  <h3>ADD NEW ORDER!</h3>
+
+  <% if @order.errors.any? %>
+    <%@order.errors.full_messages.each do |m| %>
+      <div class="alert"><%=m%></div>
+    <%end%>
+  <%end %>
+
+  <%=f.hidden_field :service_id, value: params[:service_id] %>
+  <%=f.label :comment%> <%=f.text_field :comment%>
+
+  <%= f.submit "JOIN SERVICE"%>
+<%end %>
+
