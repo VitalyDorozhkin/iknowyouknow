@@ -106,8 +106,8 @@ class UsersController < ApplicationController
 
 
   def admin?
-    check_login
-    if User.find(current_user).user_role.status != "admin"
+    return false if !check_login
+    if @self_user.user_role.status != "admin"
       go_to_user
     end
   end

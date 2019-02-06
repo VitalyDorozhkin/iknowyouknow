@@ -9,8 +9,9 @@ class ApplicationController < ActionController::Base
   end
 
   def check_login
-    if current_user == nil
+    if !@self_user
       redirect_to sign_up_path
+      return false
     end
   end
 end
