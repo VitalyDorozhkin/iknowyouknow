@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :check_login, only: [ :show, :edit, :update, :destroy]
   before_action :check_no_login, only: [:sign_up, :new, :create]
-  before_action :admin?, only: [:index]
+  before_action :check_login, :admin?, only: [:index]
   before_action :self?, only: [:edit, :update, :destroy]
 
 
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     if @user.errors.any?
       render 'new'
     else
-      login(@user.login)
+      login(@user.id)
       redirect_to user_path(@user.id)
     end
   end
@@ -74,10 +74,9 @@ class UsersController < ApplicationController
   end
 
   def sign_out
-    session[:user_id] = nil
+    logout
     @self_user = nil
     redirect_to sign_up_path
-
   end
   def check
     user = User.find_by_login(params[:user][:login])
@@ -92,11 +91,7 @@ class UsersController < ApplicationController
 
 
 
-  def check_no_login
-    if current_user != nil
-      go_to_user
-    end
-  end
+
 
 
 
@@ -106,7 +101,6 @@ class UsersController < ApplicationController
 
 
   def admin?
-    return false if !check_login
     if @self_user.user_role.status != "admin"
       go_to_user
     end

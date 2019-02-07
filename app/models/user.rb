@@ -2,7 +2,10 @@ class User < ApplicationRecord
   validates :name, length: {minimum: 3}
   validates :lastname, length: {minimum: 3}
   validates :age, presence: true
+  validates :password, presence: true
+  validates :login, uniqueness: true
 
+  before_validation :set_user_role
 
   belongs_to :user_role
 
@@ -28,6 +31,10 @@ class User < ApplicationRecord
 
   def services_of_student(teacher)
     self.student_services.where(teacher: teacher)
+  end
+
+  def set_user_role
+    self.user_role||= UserRole.find_by_status('user')
   end
 
 

@@ -23589,3 +23589,985 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/new" for 127.0.0.1 at 2019-02-07 11:40:13 +0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_user.html.erb (0.4ms)
+Completed 200 OK in 30ms (Views: 14.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-07 11:40:23 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kr5veQSiZX8ChZburjLqn7dwe3SJFO7TL/lQdPUGnAcsP+yzfKXOsTUygN7XtlHXQ6KINMplB/H9fF7ptz7Bpw==", "user"=>{"name"=>"Test", "lastname"=>"Test", "age"=>"17", "email"=>"", "phone"=>"", "login"=>"Test", "password"=>"[FILTERED]", "description"=>""}, "commit"=>"SAVE USER"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 35ms (Views: 21.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-02-07 11:42:42 +0300
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/sign_up
+Filter chain halted as :admin? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 11:42:42 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (1.9ms)
+  Rendered layouts/_user.html.erb (0.6ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-02-07 11:42:47 +0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 46ms (Views: 16.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-07 11:43:05 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ztpt44D1gmcc9Ms6ohmSZnCMN/lFWL5oeVz7DLaXLnINFzRvLEQ+mk1L53hiBVdWVigHO+JBRVRNzSqqi99MWA==", "user"=>{"name"=>"Test", "lastname"=>"Test", "age"=>"17", "email"=>"", "phone"=>"", "login"=>"Test", "password"=>"[FILTERED]", "description"=>""}, "commit"=>"SAVE USER"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUserRole Load (0.2ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "lastname", "age", "login", "password", "email", "phone", "description", "created_at", "updated_at", "user_role_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Test"], ["lastname", "Test"], ["age", 17], ["login", "Test"], ["password", "password"], ["email", ""], ["phone", ""], ["description", ""], ["created_at", "2019-02-07 08:43:05.817982"], ["updated_at", "2019-02-07 08:43:05.817982"], ["user_role_id", 2]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 50ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2019-02-07 11:43:05 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/users/6" for 127.0.0.1 at 2019-02-07 11:45:58 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/users/6" for 127.0.0.1 at 2019-02-07 11:45:59 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/users/6" for 127.0.0.1 at 2019-02-07 12:59:18 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 8ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/users" for 127.0.0.1 at 2019-02-07 12:59:56 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 12ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/sign_out" for 127.0.0.1 at 2019-02-07 13:00:04 +0300
+Processing by UsersController#sign_out as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/sign_out" for 127.0.0.1 at 2019-02-07 13:00:12 +0300
+Processing by UsersController#sign_out as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:03:08 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 9ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:03:26 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vitalydorozhkin/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 13ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:03:26 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:03:53 +0300
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/sign_up
+Filter chain halted as :admin? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 13:03:53 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (8.2ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 169ms (Views: 168.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:03:57 +0300
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/sign_up
+Filter chain halted as :admin? rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 13:03:57 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (1.5ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-02-07 13:04:00 +0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_user.html.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-07 13:04:16 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rQkYnQJxrhxbIFMB8AdV8rpgxvHoYHMcCndao9vYCXlbAAueG1ggg26vaz4cbNEE8uoDcLYXJYmTOReYn5Q6gA==", "user"=>{"name"=>"Test", "lastname"=>"Test", "age"=>"17", "email"=>"", "phone"=>"", "login"=>"Test", "password"=>"[FILTERED]", "description"=>""}, "commit"=>"SAVE USER"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."status" = ? LIMIT ?[0m  [["status", "user"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "lastname", "age", "login", "password", "email", "phone", "description", "created_at", "updated_at", "user_role_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Test"], ["lastname", "Test"], ["age", 17], ["login", "Test"], ["password", "Test"], ["email", ""], ["phone", ""], ["description", ""], ["created_at", "2019-02-07 10:04:16.509132"], ["updated_at", "2019-02-07 10:04:16.509132"], ["user_role_id", 2]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 22ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2019-02-07 13:04:16 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 13:04:23 +0300
+Processing by UsersController#sign_up as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-07 13:04:25 +0300
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 6]]
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:05:14 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:07:44 +0300
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/sign_up
+Filter chain halted as :admin? rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 13:07:44 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (1.5ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-02-07 13:07:46 +0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_user.html.erb (0.4ms)
+Completed 200 OK in 49ms (Views: 15.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-02-07 13:07:57 +0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-07 13:08:13 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z7pvdOq0RP47T4M500wIsGNsjx/4bb1U6o130t05bFGnDH0vCKojNsSBVD7dWzgt8V6SJEPwpIRpFa2eg+cYsQ==", "user"=>{"name"=>"Test", "lastname"=>"Test", "age"=>"17", "email"=>"", "phone"=>"", "login"=>"Test", "password"=>"[FILTERED]", "description"=>""}, "commit"=>"SAVE USER"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUserRole Load (0.3ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."status" = ? LIMIT ?[0m  [["status", "user"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."login" = ? LIMIT ?[0m  [["login", "Test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "lastname", "age", "login", "password", "email", "phone", "description", "created_at", "updated_at", "user_role_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Test"], ["lastname", "Test"], ["age", 17], ["login", "Test"], ["password", "password"], ["email", ""], ["phone", ""], ["description", ""], ["created_at", "2019-02-07 10:08:13.104537"], ["updated_at", "2019-02-07 10:08:13.104537"], ["user_role_id", 2]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 38ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/users/8" for 127.0.0.1 at 2019-02-07 13:08:13 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/users" for 127.0.0.1 at 2019-02-07 13:09:24 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TLf+1SN4RUuXshBJQdW6V+NwgUFIBYwVg7+4fJp4tGqWJ9uwmdfX7YHcKyhrvgN43rvWIzUKk1cnM4x9mPq8/A==", "user"=>{"name"=>"Test", "lastname"=>"Test", "age"=>"17", "email"=>"", "phone"=>"", "login"=>"Test", "password"=>"[FILTERED]", "description"=>""}, "commit"=>"SAVE USER"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 8ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-07 13:09:34 +0300
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started POST "/sign_up" for 127.0.0.1 at 2019-02-07 13:09:47 +0300
+Processing by UsersController#check as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QHg92lNoFinI7LGvCA/JVHetiZHa4ahJnCND8yptOVCa6Bi/6ceEj96Cis4iZHB7Smbe86futws4r3fyKO8xxg==", "user"=>{"login"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started POST "/sign_up" for 127.0.0.1 at 2019-02-07 13:10:45 +0300
+Processing by UsersController#check as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QHg92lNoFinI7LGvCA/JVHetiZHa4ahJnCND8yptOVCa6Bi/6ceEj96Cis4iZHB7Smbe86futws4r3fyKO8xxg==", "user"=>{"login"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 7ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started POST "/sign_up" for 127.0.0.1 at 2019-02-07 13:10:48 +0300
+Processing by UsersController#check as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QHg92lNoFinI7LGvCA/JVHetiZHa4ahJnCND8yptOVCa6Bi/6ceEj96Cis4iZHB7Smbe86futws4r3fyKO8xxg==", "user"=>{"login"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:10:55 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/sign_out" for 127.0.0.1 at 2019-02-07 13:11:00 +0300
+Processing by UsersController#sign_out as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/sign_out" for 127.0.0.1 at 2019-02-07 13:11:29 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vitalydorozhkin/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#sign_out as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 13ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:11:32 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=Test):
+  
+app/controllers/application_controller.rb:7:in `init_user'
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:11:54 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vitalydorozhkin/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/sign_up
+Filter chain halted as :admin? rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 13:11:54 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (2.3ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 176ms (Views: 175.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-02-07 13:11:56 +0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_user.html.erb (0.4ms)
+Completed 200 OK in 55ms (Views: 17.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-07 13:12:01 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c+p7Yp6ig5M2QO6DYtrfJ2nroBZWN9Rh3b90R/ixkr69kJczBC16GIU/VfmLopRFJidQOHNUNYFCOdpoRBF1lg==", "user"=>{"name"=>"Test", "lastname"=>"", "age"=>"", "email"=>"", "phone"=>"", "login"=>"Test", "password"=>"[FILTERED]", "description"=>""}, "commit"=>"SAVE USER"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUserRole Load (0.3ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."status" = ? LIMIT ?[0m  [["status", "user"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."login" = ? LIMIT ?[0m  [["login", "Test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 47ms (Views: 19.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-07 13:12:15 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k+eXPcgWGNz5tO6uTwZWKafBANk6Qvzb3gbfCYCkk7qWAPaRCEhM7AgcSxJNcA6qbJnLcamYEZDhUNmrBvHHUw==", "user"=>{"name"=>"Test", "lastname"=>"Test", "age"=>"17", "email"=>"", "phone"=>"", "login"=>"Test2", "password"=>"[FILTERED]", "description"=>""}, "commit"=>"SAVE USER"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUserRole Load (0.2ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."status" = ? LIMIT ?[0m  [["status", "user"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."login" = ? LIMIT ?[0m  [["login", "Test2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "lastname", "age", "login", "password", "email", "phone", "description", "created_at", "updated_at", "user_role_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Test"], ["lastname", "Test"], ["age", 17], ["login", "Test2"], ["password", "password"], ["email", ""], ["phone", ""], ["description", ""], ["created_at", "2019-02-07 10:12:15.975166"], ["updated_at", "2019-02-07 10:12:15.975166"], ["user_role_id", 2]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 13ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2019-02-07 13:12:15 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 9]]
+  ↳ app/views/users/show.html.erb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 9]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 9]]
+  ↳ app/views/users/show.html.erb:64
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 9]]
+  ↳ app/views/users/show.html.erb:79
+  Rendered users/show.html.erb within layouts/application (23.1ms)
+  Rendered layouts/_user.html.erb (0.6ms)
+Completed 200 OK in 38ms (Views: 34.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-02-07 13:16:41 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:110
+Redirected to http://localhost:3000/users/9
+Filter chain halted as :admin? rendered or redirected
+Completed 302 Found in 25ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2019-02-07 13:16:43 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 9]]
+  ↳ app/views/users/show.html.erb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 9]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 9]]
+  ↳ app/views/users/show.html.erb:64
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 9]]
+  ↳ app/views/users/show.html.erb:79
+  Rendered users/show.html.erb within layouts/application (35.8ms)
+  Rendered layouts/_user.html.erb (0.7ms)
+Completed 200 OK in 55ms (Views: 31.8ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-02-07 13:16:45 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:110
+Redirected to http://localhost:3000/users/9
+Filter chain halted as :admin? rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2019-02-07 13:16:45 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 9]]
+  ↳ app/views/users/show.html.erb:19
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 9]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 9]]
+  ↳ app/views/users/show.html.erb:64
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 9]]
+  ↳ app/views/users/show.html.erb:79
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2019-02-07 13:16:48 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUserRole Load (0.3ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:110
+Redirected to http://localhost:3000/users/9
+Filter chain halted as :admin? rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2019-02-07 13:16:48 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 9]]
+  ↳ app/views/users/show.html.erb:19
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 9]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 9]]
+  ↳ app/views/users/show.html.erb:64
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 9]]
+  ↳ app/views/users/show.html.erb:79
+  Rendered users/show.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_user.html.erb (0.6ms)
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/services" for 127.0.0.1 at 2019-02-07 13:16:50 +0300
+Processing by ServicesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  Rendered services/index.html.erb within layouts/application (47.9ms)
+  Rendered layouts/_user.html.erb (0.9ms)
+Completed 200 OK in 84ms (Views: 76.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/services/new" for 127.0.0.1 at 2019-02-07 13:17:00 +0300
+Processing by ServicesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/new.html.erb within layouts/application
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+  ↳ app/views/services/new.html.erb:15
+  Rendered services/new.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 40ms (Views: 34.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2019-02-07 13:17:02 +0300
+Processing by UsersController#sign_out as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Redirected to http://localhost:3000/sign_up
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 13:17:02 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (2.6ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2019-02-07 13:17:06 +0300
+Processing by UsersController#check as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cjsONuRSQGZyICLPP502Ue5i09BizP7C2AyjVqFdHN/8sT4+7VWZ2KftXo5WisrFN1UP/1syyI0GFcaVJgdcYQ==", "user"=>{"login"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."login" = ? LIMIT ?[0m  [["login", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:83
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-07 13:17:06 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:19
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:23
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:52
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:64
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:67
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:79
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:85
+  Rendered users/show.html.erb within layouts/application (21.1ms)
+  Rendered layouts/_user.html.erb (0.6ms)
+Completed 200 OK in 61ms (Views: 55.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2019-02-07 13:17:08 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUserRole Load (0.3ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:110
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_user.html.erb (0.6ms)
+Completed 200 OK in 31ms (Views: 24.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2019-02-07 13:17:10 +0300
+Processing by UsersController#sign_out as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Redirected to http://localhost:3000/sign_up
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 13:17:10 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (1.9ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:17:14 +0300
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `user_role' for nil:NilClass):
+  
+app/controllers/users_controller.rb:110:in `admin?'
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:18:53 +0300
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `user_role' for nil:NilClass):
+  
+app/controllers/users_controller.rb:110:in `admin?'
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:19:08 +0300
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `user_role' for nil:NilClass):
+  
+app/controllers/users_controller.rb:111:in `admin?'
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:21:23 +0300
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/sign_up
+Filter chain halted as :check_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 13:21:23 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (1.0ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:21:28 +0300
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/sign_up
+Filter chain halted as :check_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 13:21:28 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (0.9ms)
+  Rendered layouts/_user.html.erb (0.6ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 13:23:05 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (1.1ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2019-02-07 13:23:08 +0300
+Processing by UsersController#check as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tevUGlpTg/07A/u55pHkcfjcJXfDj+M+Yk1ghdvhQXiwDLW2mg3XzcqrXgXk57zyM4Tu31BVDnVdG2YnXbQVkQ==", "user"=>{"login"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."login" = ? LIMIT ?[0m  [["login", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:83
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 38ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-07 13:23:08 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:19
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:52
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:64
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:67
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:79
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:85
+  Rendered users/show.html.erb within layouts/application (41.9ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 55ms (Views: 49.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2019-02-07 13:23:11 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:106
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 24ms (Views: 15.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2019-02-07 13:33:22 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:104
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 36ms (Views: 13.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2019-02-07 13:33:24 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUserRole Load (0.3ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:104
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_user.html.erb (0.6ms)
+Completed 200 OK in 31ms (Views: 24.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/services" for 127.0.0.1 at 2019-02-07 13:33:53 +0300
+Processing by ServicesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (37.4ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 55ms (Views: 47.0ms | ActiveRecord: 2.5ms)
+
+
