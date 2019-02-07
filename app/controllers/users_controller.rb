@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :check_login, only: [ :show, :edit, :update, :destroy]
+  before_action :check_login, only: [ :show, :edit, :update, :destroy, :index]
   before_action :check_no_login, only: [:sign_up, :new, :create]
-  before_action :check_login, :admin?, only: [:index]
+  before_action :admin?, only: [:index]
   before_action :self?, only: [:edit, :update, :destroy]
 
 

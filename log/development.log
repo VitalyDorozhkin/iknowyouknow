@@ -24571,3 +24571,101 @@ Processing by ServicesController#index as HTML
 Completed 200 OK in 55ms (Views: 47.0ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-07 13:39:54 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUserRole Load (0.2ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:104
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_user.html.erb (0.7ms)
+Completed 200 OK in 23ms (Views: 16.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2019-02-07 13:39:57 +0300
+Processing by UsersController#sign_out as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Redirected to http://localhost:3000/sign_up
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 13:39:57 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (2.6ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-07 13:40:04 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:19
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:23
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:23
+  Rendered users/show.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 26ms (Views: 21.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-07 13:42:25 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/sign_up
+Filter chain halted as :check_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 13:42:25 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (1.1ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2019-02-07 13:42:30 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Redirected to http://localhost:3000/sign_up
+Filter chain halted as :check_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 13:42:30 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (1.0ms)
+  Rendered layouts/_user.html.erb (0.6ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-02-07 13:42:37 +0300
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/sign_up
+Filter chain halted as :check_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-07 13:42:37 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (1.2ms)
+  Rendered layouts/_user.html.erb (0.5ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
