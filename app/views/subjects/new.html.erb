@@ -1,0 +1,18 @@
+
+<%= form_for @subject do |f| %>
+  <h3>ADD NEW SUBJECT!</h3>
+
+  <% if @subject.errors.any? %>
+    <%@subject.errors.full_messages.each do |m| %>
+      <div class="alert"><%=m%></div>
+    <%end%>
+  <%end %>
+
+
+  <%=f.label :name%> <%=f.text_field :name%>
+  <%=f.label :description%> <%=f.text_field :description%>
+  <%=f.label :category%> <%=f.collection_select :category_id, Category.all, :id, :name%>
+
+  <%= f.submit "SAVE SERVICE"%>
+<%end %>
+

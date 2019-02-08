@@ -1,12 +1,20 @@
 class UsersController < ApplicationController
   before_action :check_login, only: [ :show, :edit, :update, :destroy, :index]
   before_action :check_no_login, only: [:sign_up, :new, :create]
-  before_action :admin?, only: [:index]
+  #before_action :admin?, only: [:index]
   before_action :self?, only: [:edit, :update, :destroy]
 
 
   def index
-    @users = User.all
+    if !params[:sort]
+      @users = User.all
+    elsif params[:sort] == "my_students"
+      @users = @self_user.students
+    elsif params[:sort] == "my_teachers"
+      @users = @self_user.teachers
+    end
+
+
   end
   def new
     @user = User.new
@@ -29,7 +37,7 @@ class UsersController < ApplicationController
       render 'new'
     else
       login(@user.id)
-      redirect_to user_path(@user.id)
+      go_to_user
     end
   end
   def edit
@@ -49,7 +57,7 @@ class UsersController < ApplicationController
     if @user.errors.any?
       render 'edit'
     else
-      redirect_to user_path(@user[:id])
+      go_to_user
     end
   end
 
@@ -89,25 +97,6 @@ class UsersController < ApplicationController
     end
   end
 
-
-
-
-
-
-
-
-
-
-
-
-  def admin?
-    if @self_user.user_role.status != "admin"
-      go_to_user
-    end
-  end
-
-
-
   def self?()
     if current_user != params[:id].to_i
       go_to_user
@@ -128,9 +117,7 @@ class UsersController < ApplicationController
 
 
 
-  def go_to_user
-    redirect_to user_path(current_user)
-  end
+
 
 
 

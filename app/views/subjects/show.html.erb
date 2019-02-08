@@ -1,0 +1,28 @@
+
+
+
+<h1><%=@subject.name %></h1>
+<h2>Category: <%= link_to @subject.category.name, category_path(@subject.category_id)%> </h2>
+<h2>Description: <%= @subject.description%> </h2>
+
+<h3>Services:</h3>
+<div class="hover-content">
+  <%@subject.services.each do |service|%>
+    <h3><%=link_to service.name, service_path(service.id) %></h3>
+    <h4>Price: <%=service.price %></h4>
+    <h4><%=link_to service.teacher.name + " " + service.teacher.lastname, user_path(service.teacher_id)%></h4>
+  <%end %>
+</div>
+
+<%= link_to "EDIT", edit_subject_path(@subject.id) %>
+<%= link_to "DELETE", subject_path(@subject.id), method: "DELETE" %>
+
+
+
+
+
+
+
+
+
+

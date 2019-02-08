@@ -7,6 +7,13 @@
     <h3>Email<%=u.email%></h3>
     <h3>Phone<%=u.phone%></h3>
     <h3>Description<%=u.description%></h3>
+    <%if u.student_ids.include?(@self_user.id) %>
+      <h3>Services:</h3>
+      <%@self_user.services_of_student(u).each do |s| %>
+        <%= link_to s.name, service_path(s.id) %>
+      <%end %>
+
+    <%end %>
   </div>
 
 <% end %>

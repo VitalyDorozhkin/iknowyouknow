@@ -28,7 +28,7 @@ class OrdersController < ApplicationController
     if @order.errors.any?
       render 'new'
     else
-      redirect_to service_path(@order.teacher.id)
+      redirect_to service_path(@order.service_id)
     end
   end
 

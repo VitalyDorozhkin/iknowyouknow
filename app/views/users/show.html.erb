@@ -8,92 +8,78 @@
 
   <%= link_to "EDIT", edit_user_path(@user.id) %>
   <%= link_to "DELETE", user_path(@user.id), method: "DELETE" %>
+
+  <%= link_to "Your orders", orders_path(sort: "student") %>
+  <%= link_to "Orders to you", orders_path(sort: "teacher") %>
 <%end %>
 
-<hr>
 
 
-
-<h1>Services</h1>
-<div class="hover-content">
-  <%@user.services.each  do |service|%>
-    <h2><%=link_to service.name, service_path(service.id) %></h2>
-    <h3>Description: <%= service.description%> </h3>
-    <h3>Subject: <%=service.subject.name %></h3>
-    <h3>Category: <%=service.category.name %></h3>
-    <h3>Price:<%=service.price %></h3>
-    <%if @user ==  @self_user%>
-      <h3>Students:</h3>
-      <div class="hover-content">
-      <%service.students.each do |student|%>
-        <h4><%=link_to student.name + " " + student.lastname, user_path(student.id)%></h4>
-      <%end%>
-      </div>
-    <%end %>
-  <% end %>
-  <hr>
-</div>
-
-
-
-
-<%if @user ==  @self_user%>
-
-
-
-
-  <h1>Students</h1>
-  <div class="hover-content">
-    <%@user.students.uniq.each  do |student|%>
-      <h2><%=link_to student.name + " " + student.lastname, user_path(student.id) %></h2>
-
-      <h3>Age:<%=student.age %></h3>
-      <h3>Services:</h3>
-      <%student.services_of_student(@user).each do |service| %>
-        <h4><%=link_to service.name, service_path(service.id) %></h4>
-      <%end %>
-    <% end %>
-  </div>
-
-
-
-
-  <hr>
-  <h1>Courses</h1>
-  <div class="hover-content">
-    <%@user.student_services.each  do |s|%>
-      <h2><%=link_to s.name, service_path(s.id) %></h2>
-      <h3>Description: <%= s.description%> </h3>
-      <h3>Subject: <%=s.subject.name %></h3>
-      <h3>Category: <%=s.category.name %></h3>
-      <h3>Price:<%=s.price %></h3>
-      <h3>Teacher:<%=link_to s.teacher.name + " " + s.teacher.lastname, user_path(s.teacher.id) %></h3>
-    <% end %>
-    <hr>
-  </div>
-
-
-
-  <h1>Teachers</h1>
-  <div class="hover-content">
-    <%@user.teachers.uniq.each  do |teacher|%>
-      <h2><%=teacher.name + " " + teacher.lastname %></h2>
-
-      <h3>Age:<%=teacher.age %></h3>
-      <h3>Services:</h3>
-      <div class="hover-content">
-        <%@user.services_of_student(teacher).each do |service| %>
-          <h4><%=link_to service.name, service_path(service.id)%></h4>
+<div class="flex">
+  <div class="hover-block">
+    <h1>Services</h1>
+    <div class="hover-content">
+      <%@user.services.each  do |service|%>
+        <h2><%=link_to service.name, service_path(service.id) %></h2>
+        <h3>Description: <%= service.description%> </h3>
+        <h3>Subject: <%=service.subject.name %></h3>
+        <h3>Category: <%=service.category.name %></h3>
+        <h3>Price:<%=service.price %></h3>
+        <%if @user ==  @self_user%>
+          <h3>Students:</h3>
+          <div class="hover-content">
+            <%service.students.each do |student|%>
+              <h4><%=link_to student.name + " " + student.lastname, user_path(student.id)%></h4>
+            <%end%>
+          </div>
         <%end %>
+      <% end %>
+    </div>
+  </div>
+  <%if @user ==  @self_user%>
+    <div class="hover-block">
+      <h1>Students</h1>
+      <div class="hover-content">
+        <%@user.students.uniq.each  do |student|%>
+          <h2><%=link_to student.name + " " + student.lastname, user_path(student.id) %></h2>
+          <h3>Age: <%=student.age %></h3>
+
+          <h3>Services</h3>
+          <%student.services_of_student(@user).each do |service| %>
+            <h4><%=link_to service.name, service_path(service.id) %></h4>
+          <%end %>
+        <% end %>
       </div>
+    </div>
+    <div class="hover-block">
+      <h1>Courses</h1>
+      <div class="hover-content">
+        <%@user.student_services.each  do |s|%>
+          <h2><%=link_to s.name, service_path(s.id) %></h2>
+          <h3>Description: <%= s.description%> </h3>
+          <h3>Subject: <%=s.subject.name %></h3>
+          <h3>Category: <%=s.category.name %></h3>
+          <h3>Price:<%=s.price %></h3>
+          <h3>Teacher:<%=link_to s.teacher.name + " " + s.teacher.lastname, user_path(s.teacher.id) %></h3>
+        <% end %>
       </div>
-
-    <% end %>
-
-    <%= link_to "Your orders", orders_path(sort: "student") %>
-    <%= link_to "Orders to you", orders_path(sort: "teacher") %>
-
-<%end %>
-
-
-
+    </div>
+    <div class="hover-block">
+      <h1>Teachers</h1>
+      <div class="hover-content">
+        <%@user.teachers.uniq.each  do |teacher|%>
+          <h2><%=link_to teacher.name + " " + teacher.lastname, user_path(teacher.id) %></h2>
+          <h3>Age:<%=teacher.age %></h3>
+          <div class="hover-block">
+            <h3>Services:</h3>
+            <div class="hover-content">
+              <%@user.services_of_student(teacher).each do |service| %>
+                <h4><%=link_to service.name, service_path(service.id)%></h4>
+              <%end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <%end %>
+</div>

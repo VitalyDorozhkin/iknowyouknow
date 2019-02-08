@@ -1,0 +1,16 @@
+
+<%= form_for @category do |f| %>
+  <h3>ADD NEW CATEGORY!</h3>
+
+  <% if @category.errors.any? %>
+    <%category.errors.full_messages.each do |m| %>
+      <div class="alert"><%=m%></div>
+    <%end%>
+  <%end %>
+
+
+  <%=f.label :name%> <%=f.text_field :name%>
+  <%=f.label :description%> <%=f.text_field :description%>
+  <%= f.submit "SAVE SERVICE"%>
+<%end %>
+

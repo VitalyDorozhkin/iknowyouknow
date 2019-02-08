@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   resources :users
   resources :services
   resources :orders
-
-
+  resources :subjects
+  resources :categories
 
   root "users#index"
   get "sign_up", to:"users#sign_up"

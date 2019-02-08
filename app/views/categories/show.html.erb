@@ -1,0 +1,26 @@
+
+
+
+<h1><%= @category.name%></h1>
+
+<h3>Description: <%= @category.description%> </h3>
+
+<h3>Subjects:</h3>
+<div class="hover-content">
+  <%@category.subjects.each do |subject|%>
+    <h3><%=link_to subject.name, subject_path(subject.id) %></h3>
+  <%end %>
+</div>
+
+<%= link_to "EDIT", edit_category_path(@category.id) %>
+<%= link_to "DELETE", category_path(@category.id), method: "DELETE" %>
+
+
+
+
+
+
+
+
+
+

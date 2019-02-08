@@ -18,4 +18,14 @@ class ApplicationController < ActionController::Base
       go_to_user
     end
   end
+  def go_to_user
+    redirect_to user_path(current_user)
+  end
+  def admin?
+    if @self_user.user_role.status != "admin"
+      flash[:not_admin] = "You are not admin"
+      go_to_user
+    end
+  end
+
 end

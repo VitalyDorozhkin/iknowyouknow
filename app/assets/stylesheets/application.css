@@ -15,16 +15,68 @@
  */
 
 @import url('https://fonts.googleapis.com/css?family=Lato');
-.right{
+*{
+    margin: 0;
+    padding: 0;
+}
+ul, li{
+    list-style: none;
+}
+.hover-block > h1,
+.hover-block > h2,
+.hover-block > h3,
+.hover-block > h4,
+.hover-block > h5,
+.hover-block > h6 {
+    text-align: center;
+}
+
+
+.auto-margin{
+    margin: auto;
+}
+
+
+.navigation{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+.navigation li{
+
+    position: relative;
+
+}
+.navigation li:first-child {
+    margin-right: auto;
+}
+.navigation ul{
+    visibility: hidden;
     position: absolute;
-    right: 10px;
-    border: 1px solid black;
-    border-radius: 3px;
+
+    padding: 0;
+}
+
+.navigation li:hover > ul{
+    visibility: visible;
+    left: 0;
+}
+
+.hover-block{
+    display: inline-block;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 .hover-content{
+
     max-height: 0;
     overflow: hidden;
     transition: 1000ms;
+    display: inline-block;
+    border: 1px solid white;
 }
 
 h1:hover + .hover-content,
@@ -47,12 +99,12 @@ a{
     color: white;
     display: inline-block;
     background-color: #4495de;
-    margin: 2px;
+    margin: 4px;
     padding: 2px;
     transition: 400ms;
 }
 a:hover{
-    transform: scale(1.05);
+    transform: scale(1.02);
     transition: 400ms;
 }
 

@@ -1,0 +1,16 @@
+<h1>Subjects</h1>
+<%@subjects.each  do |subject|%>
+  <h2><%=link_to subject.name, subject_path(subject.id) %></h2>
+<h3>Category: <%= link_to subject.category.name, category_path(subject.category_id)%> </h3>
+  <h3>Description: <%= subject.description%> </h3>
+
+  <h3>Services:</h3>
+  <div class="hover-content">
+    <%subject.services.each do |service|%>
+      <h3><%=link_to service.name, service_path(service.id) %></h3>
+      <h4>Price: <%=service.price %></h4>
+      <h4><%=link_to service.teacher.name + " " + service.teacher.lastname, user_path(service.teacher_id)%></h4>
+    <%end %>
+  </div>
+
+<% end %>
