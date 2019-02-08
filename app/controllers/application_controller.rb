@@ -25,6 +25,8 @@ class ApplicationController < ActionController::Base
     if @self_user.user_role.status != "admin"
       flash[:not_admin] = "You are not admin"
       go_to_user
+    else
+      true
     end
   end
 

@@ -46,7 +46,7 @@ ul, li{
     position: relative;
     font-size: 24px;
 }
-.navigation li:first-child {
+.navigation > li:first-child {
     margin-right: auto;
     font-size: 36px;
 }
