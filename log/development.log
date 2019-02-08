@@ -35647,3 +35647,2036 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 1.9ms)
 
 
+Started GET "/services" for 127.0.0.1 at 2019-02-08 16:05:13 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vitalydorozhkin/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by ServicesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (50.6ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (6.8ms)
+Completed 200 OK in 279ms (Views: 252.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/services" for 127.0.0.1 at 2019-02-08 16:06:15 +0300
+Processing by ServicesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (20.1ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.0ms)
+Completed 200 OK in 46ms (Views: 40.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/services" for 127.0.0.1 at 2019-02-08 16:06:16 +0300
+Processing by ServicesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (26.7ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 50ms (Views: 44.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 16:06:24 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (26.6ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 69ms (Views: 63.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 16:09:50 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (22.9ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 48ms (Views: 41.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 16:09:53 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (26.6ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.1ms)
+Completed 200 OK in 52ms (Views: 43.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 16:10:09 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (28.4ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.0ms)
+Completed 200 OK in 58ms (Views: 48.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 16:11:16 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (29.0ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (12.7ms)
+Completed 200 OK in 66ms (Views: 58.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users?sort=my_students" for 127.0.0.1 at 2019-02-08 16:11:17 +0300
+Processing by UsersController#index as HTML
+  Parameters: {"sort"=>"my_students"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/index.html.erb:1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 5]]
+  ↳ app/views/users/index.html.erb:10
+  Rendered users/index.html.erb within layouts/application (8.0ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.9ms)
+Completed 200 OK in 36ms (Views: 30.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 16:11:42 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (30.8ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 59ms (Views: 51.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 16:11:43 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (32.4ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 58ms (Views: 49.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/services" for 127.0.0.1 at 2019-02-08 16:26:24 +0300
+Processing by ServicesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (59.6ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (7.7ms)
+Completed 200 OK in 108ms (Views: 81.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/services?sort=my_services" for 127.0.0.1 at 2019-02-08 16:26:28 +0300
+Processing by ServicesController#index as HTML
+  Parameters: {"sort"=>"my_services"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (23.6ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 51ms (Views: 43.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/services?sort=my_services" for 127.0.0.1 at 2019-02-08 16:26:31 +0300
+Processing by ServicesController#index as HTML
+  Parameters: {"sort"=>"my_services"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (25.0ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.2ms)
+Completed 200 OK in 52ms (Views: 45.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/services?sort=my_services" for 127.0.0.1 at 2019-02-08 16:26:38 +0300
+Processing by ServicesController#index as HTML
+  Parameters: {"sort"=>"my_services"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (23.2ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.4ms)
+Completed 200 OK in 55ms (Views: 47.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/services?sort=services_for_me" for 127.0.0.1 at 2019-02-08 16:26:40 +0300
+Processing by ServicesController#index as HTML
+  Parameters: {"sort"=>"services_for_me"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (24.8ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 62ms (Views: 55.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 16:26:45 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (26.7ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.6ms)
+Completed 200 OK in 51ms (Views: 43.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/services?sort=my_services" for 127.0.0.1 at 2019-02-08 16:26:46 +0300
+Processing by ServicesController#index as HTML
+  Parameters: {"sort"=>"my_services"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (24.4ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 47ms (Views: 41.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/services?sort=my_services" for 127.0.0.1 at 2019-02-08 16:27:42 +0300
+Processing by ServicesController#index as HTML
+  Parameters: {"sort"=>"my_services"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.6ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (21.8ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 45ms (Views: 38.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/services?sort=my_services" for 127.0.0.1 at 2019-02-08 16:28:52 +0300
+Processing by ServicesController#index as HTML
+  Parameters: {"sort"=>"my_services"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  Rendered services/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Services</h1>
+    2: <%@services.each  do |service|%>
+    3:   <h2><%=link_to service.name, service_path(service.id) %></h2>
+    4:   <h3>Teacher:<%= link_to service.teacher.name + " " + service.teacher.lastname, user_path(service.teacher.id) %></h3>
+    5:   <h3>Description: <%= service.description%> </h3>
+  
+app/views/services/index.html.erb:2:in `_app_views_services_index_html_erb___1262608144659685855_70110420988380'
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 16:28:58 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.7ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (68.7ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (8.5ms)
+Completed 200 OK in 105ms (Views: 92.0ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 16:28:58 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (17.6ms)
+  [1m[36mUserRole Load (0.2ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.9ms)
+Completed 200 OK in 52ms (Views: 48.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/services?sort=my_services" for 127.0.0.1 at 2019-02-08 16:28:59 +0300
+Processing by ServicesController#index as HTML
+  Parameters: {"sort"=>"my_services"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  Rendered services/index.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Services</h1>
+    2: <%@services.each  do |service|%>
+    3:   <h2><%=link_to service.name, service_path(service.id) %></h2>
+    4:   <h3>Teacher:<%= link_to service.teacher.name + " " + service.teacher.lastname, user_path(service.teacher.id) %></h3>
+    5:   <h3>Description: <%= service.description%> </h3>
+  
+app/views/services/index.html.erb:2:in `_app_views_services_index_html_erb___1262608144659685855_70110425694340'
+Started GET "/services?sort=my_services" for 127.0.0.1 at 2019-02-08 16:29:30 +0300
+Processing by ServicesController#index as HTML
+  Parameters: {"sort"=>"my_services"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  Rendered services/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Services</h1>
+    2: <%@services.each  do |service|%>
+    3:   <h2><%=link_to service.name, service_path(service.id) %></h2>
+    4:   <h3>Teacher:<%= link_to service.teacher.name + " " + service.teacher.lastname, user_path(service.teacher.id) %></h3>
+    5:   <h3>Description: <%= service.description%> </h3>
+  
+app/views/services/index.html.erb:2:in `_app_views_services_index_html_erb___1262608144659685855_70110509878300'
+Started GET "/services?sort=my_services" for 127.0.0.1 at 2019-02-08 16:29:31 +0300
+Processing by ServicesController#index as HTML
+  Parameters: {"sort"=>"my_services"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  Rendered services/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Services</h1>
+    2: <%@services.each  do |service|%>
+    3:   <h2><%=link_to service.name, service_path(service.id) %></h2>
+    4:   <h3>Teacher:<%= link_to service.teacher.name + " " + service.teacher.lastname, user_path(service.teacher.id) %></h3>
+    5:   <h3>Description: <%= service.description%> </h3>
+  
+app/views/services/index.html.erb:2:in `_app_views_services_index_html_erb___1262608144659685855_70110425079960'
+Started GET "/services/4" for 127.0.0.1 at 2019-02-08 16:29:34 +0300
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/services_controller.rb:56
+  Rendering services/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/show.html.erb:6
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/show.html.erb:8
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/show.html.erb:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "services"."id" FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/services/show.html.erb:24
+  Rendered services/show.html.erb within layouts/application (39.4ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (6.3ms)
+Completed 200 OK in 85ms (Views: 60.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/services" for 127.0.0.1 at 2019-02-08 16:29:37 +0300
+Processing by ServicesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  Rendered services/index.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Services</h1>
+    2: <%@services.each  do |service|%>
+    3:   <h2><%=link_to service.name, service_path(service.id) %></h2>
+    4:   <h3>Teacher:<%= link_to service.teacher.name + " " + service.teacher.lastname, user_path(service.teacher.id) %></h3>
+    5:   <h3>Description: <%= service.description%> </h3>
+  
+app/views/services/index.html.erb:2:in `_app_views_services_index_html_erb___1262608144659685855_70110425910540'
+Started GET "/services/4" for 127.0.0.1 at 2019-02-08 16:29:41 +0300
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/services_controller.rb:56
+  Rendering services/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/show.html.erb:6
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/show.html.erb:8
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/show.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "services"."id" FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/services/show.html.erb:24
+  Rendered services/show.html.erb within layouts/application (18.3ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.3ms)
+Completed 200 OK in 44ms (Views: 40.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/services" for 127.0.0.1 at 2019-02-08 16:29:49 +0300
+Processing by ServicesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  Rendered services/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Services</h1>
+    2: <%@services.each  do |service|%>
+    3:   <h2><%=link_to service.name, service_path(service.id) %></h2>
+    4:   <h3>Teacher:<%= link_to service.teacher.name + " " + service.teacher.lastname, user_path(service.teacher.id) %></h3>
+    5:   <h3>Description: <%= service.description%> </h3>
+  
+app/views/services/index.html.erb:2:in `_app_views_services_index_html_erb___1262608144659685855_70110421088760'
+Started GET "/services" for 127.0.0.1 at 2019-02-08 16:30:04 +0300
+Processing by ServicesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (36.7ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (6.3ms)
+Completed 200 OK in 78ms (Views: 53.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/services" for 127.0.0.1 at 2019-02-08 16:30:06 +0300
+Processing by ServicesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.7ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (25.6ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.9ms)
+Completed 200 OK in 50ms (Views: 43.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/services?sort=my_services" for 127.0.0.1 at 2019-02-08 16:30:08 +0300
+Processing by ServicesController#index as HTML
+  Parameters: {"sort"=>"my_services"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (15.3ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.3ms)
+Completed 200 OK in 58ms (Views: 50.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/services" for 127.0.0.1 at 2019-02-08 16:30:09 +0300
+Processing by ServicesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (23.5ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 50ms (Views: 43.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/services?sort=services_for_me" for 127.0.0.1 at 2019-02-08 16:30:11 +0300
+Processing by ServicesController#index as HTML
+  Parameters: {"sort"=>"services_for_me"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  Rendered services/index.html.erb within layouts/application (13.7ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 39ms (Views: 33.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/services?sort=my_services" for 127.0.0.1 at 2019-02-08 16:30:15 +0300
+Processing by ServicesController#index as HTML
+  Parameters: {"sort"=>"my_services"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (13.7ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.7ms)
+Completed 200 OK in 39ms (Views: 33.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/services" for 127.0.0.1 at 2019-02-08 16:31:06 +0300
+Processing by ServicesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.6ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (24.5ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.0ms)
+Completed 200 OK in 60ms (Views: 54.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/services/1" for 127.0.0.1 at 2019-02-08 16:36:22 +0300
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mService Load (0.6ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/services_controller.rb:56
+  Rendering services/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/show.html.erb:6
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/show.html.erb:8
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/show.html.erb:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "services"."id" FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/services/show.html.erb:24
+  Rendered services/show.html.erb within layouts/application (8.1ms)
+  [1m[36mUserRole Load (0.2ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.4ms)
+Completed 200 OK in 43ms (Views: 28.4ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-08 16:36:23 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/index.html.erb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 3]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/index.html.erb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 4]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 5]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 8]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 9]]
+  ↳ app/views/users/index.html.erb:10
+  Rendered users/index.html.erb within layouts/application (13.5ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.0ms)
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2019-02-08 16:36:59 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUserRole Load (0.2ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+Completed 200 OK in 27ms (Views: 23.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 16:38:24 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (27.3ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.0ms)
+Completed 200 OK in 71ms (Views: 61.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 16:45:41 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (27.8ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.2ms)
+Completed 200 OK in 58ms (Views: 44.5ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 16:45:43 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.6ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (32.3ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 57ms (Views: 48.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-08 16:48:27 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/index.html.erb:12
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 3]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/index.html.erb:12
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 4]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 5]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 8]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 9]]
+  ↳ app/views/users/index.html.erb:10
+  Rendered users/index.html.erb within layouts/application (17.2ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.9ms)
+Completed 200 OK in 53ms (Views: 46.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/services" for 127.0.0.1 at 2019-02-08 16:48:31 +0300
+Processing by ServicesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (19.9ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 43ms (Views: 37.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 17:49:36 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (28.1ms)
+  [1m[36mUserRole Load (0.2ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.2ms)
+Completed 200 OK in 57ms (Views: 42.5ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-08 17:49:40 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/index.html.erb:12
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 3]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/index.html.erb:12
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 4]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 5]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 8]]
+  ↳ app/views/users/index.html.erb:10
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 9]]
+  ↳ app/views/users/index.html.erb:10
+  Rendered users/index.html.erb within layouts/application (19.8ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (12.1ms)
+Completed 200 OK in 55ms (Views: 49.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2019-02-08 17:49:47 +0300
+Processing by UsersController#sign_out as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Redirected to http://localhost:3000/sign_up
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-08 17:49:47 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (2.2ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-08 18:04:42 +0300
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/sign_up
+Filter chain halted as :check_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-08 18:04:42 +0300
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.erb within layouts/application
+  Rendered users/sign_up.erb within layouts/application (1.0ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2019-02-08 18:05:11 +0300
+Processing by UsersController#check as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yCljJfv1zltWLS+fa8BGzDpif22aJJzX3rkGdNEmtiZM7H9j2eFGT8BEnZ5n/30xlvkMAEQuDrW2BQ0dh1ZS/w==", "user"=>{"login"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."login" = ? LIMIT ?[0m  [["login", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:90
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-08 18:05:11 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:22
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" INNER JOIN "services" ON "orders"."service_id" = "services"."id" WHERE "services"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:43
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 5], ["teacher_id", 1]]
+  ↳ app/views/users/show.html.erb:48
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:57
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:61
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:63
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "services" ON "users"."id" = "services"."teacher_id" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 2]]
+  ↳ app/views/users/show.html.erb:76
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "orders" ON "services"."id" = "orders"."service_id" WHERE "orders"."student_id" = ? AND "services"."teacher_id" = ?[0m  [["student_id", 1], ["teacher_id", 3]]
+  ↳ app/views/users/show.html.erb:76
+  Rendered users/show.html.erb within layouts/application (17.5ms)
+  [1m[36mUserRole Load (0.2ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (2.3ms)
+Completed 200 OK in 36ms (Views: 31.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/services" for 127.0.0.1 at 2019-02-08 18:05:12 +0300
+Processing by ServicesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/services/index.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 3]]
+  ↳ app/views/services/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:4
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "subjects" ON "categories"."id" = "subjects"."category_id" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/services/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "orders" ON "users"."id" = "orders"."student_id" WHERE "orders"."service_id" = ?[0m  [["service_id", 5]]
+  ↳ app/views/services/index.html.erb:12
+  Rendered services/index.html.erb within layouts/application (23.6ms)
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 68ms (Views: 61.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2019-02-08 18:05:18 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUserRole Load (0.4ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+Completed 200 OK in 34ms (Views: 26.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2019-02-08 18:05:24 +0300
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ie9DMlPiJHegnL9SUuInHi44+MPwL4bdEACDvGQ9zdo4hvMAUYuEnYmhwvOcb+j0cz5mIkFMnKYOKXX4s7oHIw==", "category"=>{"name"=>"launguages", "description"=>""}, "commit"=>"SAVE SERVICE"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUserRole Load (0.3ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 0.6ms)
+
+
+  
+NameError (undefined local variable or method `category' for #<CategoriesController:0x00007f87b640e7b0>
+Did you mean?  category_url):
+  
+app/controllers/categories_controller.rb:10:in `create'

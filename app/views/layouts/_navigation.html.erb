@@ -10,6 +10,8 @@
         <%=link_to "Services", services_path%>
         <ul>
           <li><%=link_to "new service", new_service_path%></li>
+          <li><%=link_to "My services", services_path(sort: "my_services")%></li>
+          <li><%=link_to "Services for me", services_path(sort: "services_for_me")%></li>
         </ul>
       </li>
       <li>

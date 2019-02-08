@@ -64,14 +64,16 @@ ul, li{
 
 .hover-block{
     display: inline-block;
+
+
 }
 .flex{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: flex-start;
 }
 .hover-content{
-
     max-height: 0;
     overflow: hidden;
     transition: 1000ms;

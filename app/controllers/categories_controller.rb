@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
   def create
-    @category = category.create(
+    @category = Category.create(
         name: params[:category][:name],
         description: params[:category][:description]
     )

@@ -2,7 +2,14 @@ class ServicesController < ApplicationController
   before_action :check_login
   before_action :teacher?, only:[:edit, :update, :destroy]
   def index
-    @services = Service.all
+
+    if params[:sort] == "my_services"
+      @services = @self_user.services
+    elsif params[:sort] == "services_for_me"
+      @services = @self_user.student_services
+    else
+      @services = Service.all
+    end
   end
   def new
     @service = Service.new
