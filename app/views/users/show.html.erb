@@ -26,16 +26,23 @@
         <h3>Category: <%=service.category.name %></h3>
         <h3>Price:<%=service.price %></h3>
         <%if @user ==  @self_user%>
-          <h3>Students:</h3>
-          <div class="hover-content">
-            <%service.students.each do |student|%>
-              <h4><%=link_to student.name + " " + student.lastname, user_path(student.id)%></h4>
-            <%end%>
-          </div>
-        <%end %>
+          <%if service.student_ids.size > 1 %>
+            <h3>Students: <%= service.student_ids.size %></h3>
+            <div class="hover-content">
+              <%service.students.each do |student|%>
+                <h4><%=link_to student.name + " " + student.lastname, user_path(student.id)%></h4>
+              <%end%>
+            </div>
+          <% elsif service.student_ids.size == 1 %>
+            <h3>Student: <%=link_to service.students.first.name + " " + service.students.first.lastname%> </h3>
+          <% else %>
+            <h3>No Students Yet</h3>
+          <%end%>
+        <%end%>
       <% end %>
     </div>
   </div>
+
   <%if @user ==  @self_user%>
     <div class="hover-block">
       <h1>Students</h1>
@@ -43,11 +50,21 @@
         <%@user.students.uniq.each  do |student|%>
           <h2><%=link_to student.name + " " + student.lastname, user_path(student.id) %></h2>
           <h3>Age: <%=student.age %></h3>
+          <%if student.services_of_student(@user).count == 1 %>
+            <h3>Service:
+              <%=link_to student.services_of_student(@user).first.name,
+                      service_path(student.services_of_student(@user).first.id) %>
+            </h3>
+          <%else %>
+            <h3>Services: <%= student.services_of_student(@user).size %></h3>
+            <div class="hover-content">
+              <%student.services_of_student(@user).each do |service| %>
+                <h4><%=link_to service.name, service_path(service.id) %></h4>
+              <%end %>
+            </div>
 
-          <h3>Services</h3>
-          <%student.services_of_student(@user).each do |service| %>
-            <h4><%=link_to service.name, service_path(service.id) %></h4>
-          <%end %>
+          <%end%>
+
         <% end %>
       </div>
     </div>
@@ -70,14 +87,20 @@
         <%@user.teachers.uniq.each  do |teacher|%>
           <h2><%=link_to teacher.name + " " + teacher.lastname, user_path(teacher.id) %></h2>
           <h3>Age:<%=teacher.age %></h3>
-          <div class="hover-block">
-            <h3>Services:</h3>
+          <%if @user.services_of_student(teacher).size == 1%>
+            <h3>Service:
+              <%=link_to @user.services_of_student(teacher).first.name,
+                         service_path(@user.services_of_student(teacher).first.id)%>
+            </h3>
+          <%else %>
+            <h3>Services: <%=@user.services_of_student(teacher).size %></h3>
             <div class="hover-content">
               <%@user.services_of_student(teacher).each do |service| %>
                 <h4><%=link_to service.name, service_path(service.id)%></h4>
               <%end %>
             </div>
-          </div>
+          <%end %>
+
         <% end %>
       </div>
     </div>

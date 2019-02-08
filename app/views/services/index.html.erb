@@ -1,19 +1,42 @@
 <h1>Services</h1>
 <%@services.each  do |service|%>
   <h2><%=link_to service.name, service_path(service.id) %></h2>
-  <h3>Teacher:<%= link_to service.teacher.name + " " + service.teacher.lastname, user_path(service.teacher.id) %></h3>
+  <h3>Teacher:
+    <%=if service.teacher ==  @self_user
+        link_to "YOU", user_path(service.teacher.id)
+      else
+        link_to service.teacher.name + " " + service.teacher.lastname, user_path(service.teacher.id)
+      end%>
+  </h3>
+
   <h3>Description: <%= service.description%> </h3>
   <h3>Subject: <%=service.subject.name %></h3>
   <h3>Category: <%=service.category.name %></h3>
-  <h3>Price:<%=service.price %></h3>
-  <%if service.teacher.id == @self_user.id %>
-    <h3>Students:</h3>
-    <div class="hover-content">
-      <%service.students.each do |student|%>
-        <h4><%=link_to student.name + " " + student.lastname, user_path(student.id)%></h4>
-      <%end %>
-    </div>
+  <h3>Price: <%=service.price %></h3>
 
+  <%if service.teacher ==  @self_user%>
+    <%if service.student_ids.size > 1 %>
+      <h3>Students: <%= service.student_ids.size %></h3>
+      <div class="hover-content">
+        <%service.students.each do |student|%>
+          <h4><%=link_to student.name + " " + student.lastname, user_path(student.id)%></h4>
+        <%end%>
+      </div>
+    <% elsif service.student_ids.size == 1 %>
+      <h3>Student: <%=link_to service.students.first.name + " " + service.students.first.lastname%> </h3>
+    <% else %>
+      <h3>No Students Yet</h3>
+    <%end%>
+  <%else%>
+    <%if service.student_ids.size > 1 %>
+      <h3>Students: <%= service.student_ids.size %></h3>
+    <% elsif service.student_ids.size == 1 %>
+      <h3>Student: 1 </h3>
+    <% else %>
+      <h3>No Students Yet</h3>
+    <%end%>
   <%end%>
 
-<% end %>
+<%end %>
+
+

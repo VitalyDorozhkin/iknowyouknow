@@ -8,7 +8,7 @@ class ServicesController < ApplicationController
     elsif params[:sort] == "services_for_me"
       @services = @self_user.student_services
     else
-      @services = Service.all
+      @services = Service.all.where("teacher_id != #{@self_user.id}")
     end
   end
   def new

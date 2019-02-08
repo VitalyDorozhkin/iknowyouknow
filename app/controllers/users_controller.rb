@@ -9,9 +9,9 @@ class UsersController < ApplicationController
     if !params[:sort]
       @users = User.all
     elsif params[:sort] == "my_students"
-      @users = @self_user.students
+      @users = @self_user.students.uniq
     elsif params[:sort] == "my_teachers"
-      @users = @self_user.teachers
+      @users = @self_user.teachers.uniq
     end
 
 

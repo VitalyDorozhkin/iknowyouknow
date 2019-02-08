@@ -3,13 +3,14 @@ class OrdersController < ApplicationController
   def index
     if params[:sort] == "teacher"
       @orders = User.find_by_id(@self_user).teacher_orders
-    end
-    if params[:sort] == "student"
+
+    elsif params[:sort] == "student"
       @orders = User.find_by_id(@self_user).orders
+    elsif admin?
+      @orders = Order.all
     end
-    if @orders == nil
-      redirect_to user_path(@self_user.id)
-    end
+
+    go_to_user if @orders == nil
 
 
   end
