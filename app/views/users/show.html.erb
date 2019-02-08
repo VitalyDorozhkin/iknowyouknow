@@ -16,10 +16,11 @@
 
 
 <div class="flex">
-  <div class="hover-block">
+    <div class="hover-block">
     <h1>Services</h1>
     <div class="hover-content">
-      <%@user.services.each  do |service|%>
+      <%if @user.services.size > 0 %>
+        <%@user.services.each  do |service|%>
         <h2><%=link_to service.name, service_path(service.id) %></h2>
         <h3>Description: <%= service.description%> </h3>
         <h3>Subject: <%=service.subject.name %></h3>
@@ -40,11 +41,18 @@
           <%end%>
         <%end%>
       <% end %>
+      <%elsif @user == @self_user %>
+        <h2>You have no services! <%=link_to "Create New Service", new_service_path%> NOW!</h2>
+      <%else %>
+        <h2>Sorry, there are no services</h2>
+      <%end %>
     </div>
   </div>
 
+
   <%if @user ==  @self_user%>
-    <div class="hover-block">
+    <%if @user.students.size > 0 %>
+      <div class="hover-block">
       <h1>Students</h1>
       <div class="hover-content">
         <%@user.students.uniq.each  do |student|%>
@@ -68,41 +76,48 @@
         <% end %>
       </div>
     </div>
-    <div class="hover-block">
-      <h1>Courses</h1>
-      <div class="hover-content">
-        <%@user.student_services.each  do |s|%>
-          <h2><%=link_to s.name, service_path(s.id) %></h2>
-          <h3>Description: <%= s.description%> </h3>
-          <h3>Subject: <%=s.subject.name %></h3>
-          <h3>Category: <%=s.category.name %></h3>
-          <h3>Price:<%=s.price %></h3>
-          <h3>Teacher:<%=link_to s.teacher.name + " " + s.teacher.lastname, user_path(s.teacher.id) %></h3>
-        <% end %>
+    <%end %>
+    <%if @user.student_services.size > 0 %>
+      <div class="hover-block">
+        <h1>Courses</h1>
+        <div class="hover-content">
+          <%@user.student_services.each  do |s|%>
+            <h2><%=link_to s.name, service_path(s.id) %></h2>
+            <h3>Description: <%= s.description%> </h3>
+            <h3>Subject: <%=s.subject.name %></h3>
+            <h3>Category: <%=s.category.name %></h3>
+            <h3>Price:<%=s.price %></h3>
+            <h3>Teacher:<%=link_to s.teacher.name + " " + s.teacher.lastname, user_path(s.teacher.id) %></h3>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <div class="hover-block">
-      <h1>Teachers</h1>
-      <div class="hover-content">
-        <%@user.teachers.uniq.each  do |teacher|%>
-          <h2><%=link_to teacher.name + " " + teacher.lastname, user_path(teacher.id) %></h2>
-          <h3>Age:<%=teacher.age %></h3>
-          <%if @user.services_of_student(teacher).size == 1%>
-            <h3>Service:
-              <%=link_to @user.services_of_student(teacher).first.name,
-                         service_path(@user.services_of_student(teacher).first.id)%>
-            </h3>
-          <%else %>
-            <h3>Services: <%=@user.services_of_student(teacher).size %></h3>
-            <div class="hover-content">
-              <%@user.services_of_student(teacher).each do |service| %>
-                <h4><%=link_to service.name, service_path(service.id)%></h4>
-              <%end %>
-            </div>
-          <%end %>
+    <%end %>
+    <%if @user.teachers.size > 0 %>
+      <div class="hover-block">
+        <h1>Teachers</h1>
+        <div class="hover-content">
+          <%@user.teachers.uniq.each  do |teacher|%>
+            <h2><%=link_to teacher.name + " " + teacher.lastname, user_path(teacher.id) %></h2>
+            <h3>Age:<%=teacher.age %></h3>
+            <%if @user.services_of_student(teacher).size == 1%>
+              <h3>Service:
+                <%=link_to @user.services_of_student(teacher).first.name,
+                           service_path(@user.services_of_student(teacher).first.id)%>
+              </h3>
+            <%else %>
+              <h3>Services: <%=@user.services_of_student(teacher).size %></h3>
+              <div class="hover-content">
+                <%@user.services_of_student(teacher).each do |service| %>
+                  <h4><%=link_to service.name, service_path(service.id)%></h4>
+                <%end %>
+              </div>
+            <%end %>
 
-        <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <%end %>
+
+
   <%end %>
 </div>
