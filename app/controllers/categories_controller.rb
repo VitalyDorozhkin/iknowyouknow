@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
     if @category.errors.any?
       render 'new'
     else
-      redirect_to category_path(@subject.id)
+      redirect_to category_path(@category.id)
     end
   end
   def edit
