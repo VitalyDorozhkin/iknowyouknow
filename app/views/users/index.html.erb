@@ -17,7 +17,7 @@
         </div>
       </div>
     <%elsif u.services.size == 1%>
-      <h3>Service: <%= u.services.name%></h3>
+      <h3>Service: <%= link_to u.services.first.name, service_path(u.services.first)%></h3>
     <%end %>
 
     <%if @self_user.services_of_student(u).size > 1 %>

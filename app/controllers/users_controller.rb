@@ -6,12 +6,13 @@ class UsersController < ApplicationController
 
 
   def index
-    if !params[:sort]
-      @users = User.all
-    elsif params[:sort] == "my_students"
+
+    if params[:sort] == "my_students"
       @users = @self_user.students.uniq
     elsif params[:sort] == "my_teachers"
       @users = @self_user.teachers.uniq
+    else
+      @users = User.all.where("id != #{@self_user.id}")
     end
 
 
