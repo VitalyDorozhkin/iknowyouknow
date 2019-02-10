@@ -7,6 +7,9 @@ class User < ApplicationRecord
 
   before_validation :set_user_role
 
+
+  has_one_attached :avatar
+
   belongs_to :user_role
 
   #teacher methods

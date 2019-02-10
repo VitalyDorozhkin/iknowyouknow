@@ -31,7 +31,8 @@ class UsersController < ApplicationController
         login: params[:user][:login],
         password: params[:user][:password],
 
-        description: params[:user][:description]
+        description: params[:user][:description],
+        avatar: params[:user][:avatar]
     )
 
     if @user.errors.any?
