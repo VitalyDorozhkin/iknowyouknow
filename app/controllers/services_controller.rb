@@ -4,7 +4,9 @@ class ServicesController < ApplicationController
   def index
     sort_direction = params[:sort_order] || "desc"
     sort_field = params[:sort] || "id"
-    sort_field = "created_at" if sort_field == "date"
+     if sort_field == "date"
+       sort_field = "created_at"
+     end
     if params[:type] == "my"
       @services = @self_user.services
     elsif params[:type] == "i_use"
@@ -12,7 +14,6 @@ class ServicesController < ApplicationController
     else
       @services = Service.all.where("teacher_id != #{@self_user.id}")
     end
-    @services = @services.where()
     @services = @services.order(sort_field => sort_direction)
 
 
