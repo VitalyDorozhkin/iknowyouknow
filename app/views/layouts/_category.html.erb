@@ -1,0 +1,31 @@
+
+<%with_admin ||= false %>
+<h2><%=link_to category.name, category_path(category.id) %></h2>
+<h3>Description: <%= category.description%> </h3>
+<h3>Services:   <%=category.services.size%></h3>
+
+<%if @self_user.admin? && with_admin%>
+  <%= link_to "EDIT", edit_category_path(@category.id) %>
+  <%= link_to "DELETE", category_path(@category.id), method: "DELETE" %>
+<%end %>
+<br>
+
+
+
+
+<div class="hover-block">
+  <h3>Subjects: <%=category.subjects.size%></h3>
+  <div class="hover-content">
+    <%category.subjects.each do |subject|%>
+      <h3><%=link_to subject.name, subject_path(subject.id) %></h3>
+      <h4>Services:   <%=subject.services.size%></h4>
+    <%end %>
+  </div>
+</div>
+
+
+
+
+
+
+

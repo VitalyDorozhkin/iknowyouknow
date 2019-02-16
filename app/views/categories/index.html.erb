@@ -1,14 +1,5 @@
 <h1>Categories</h1>
-<%@categories.each  do |category|%>
-  <h2><%=link_to category.name, category_path(category.id) %></h2>
-  <h3>Description: <%= category.description%> </h3>
-
-  <h3>Subjects:</h3>
-  <div class="hover-content">
-    <%category.subjects.each do |subject|%>
-      <h3><%=link_to subject.name, subject_path(subject.id) %></h3>
-
-    <%end %>
-  </div>
+<%@categories.uniq.each  do |category|%>
+<%=render "layouts/category", category: category %>
 
 <% end %>

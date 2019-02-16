@@ -1,22 +1,4 @@
 
-<h1 class="auto-margin"><%=@service.name %> Edit</h1>
+<h1><%=@service.name %> Edit</h1>
 
-<div class="auto-margin">
-    <%= form_for @service, url: service_path(@service[:id]), method: :patch do |f| %>
-      <h3>ADD NEW SERVICE!</h3>
-
-      <% if @service.errors.any? %>
-        <%@service.errors.full_messages.each do |m| %>
-          <div class="alert"><%=m%></div>
-        <%end%>
-      <%end %>
-
-
-      <%=f.label :name%> <%=f.text_field :name%>
-      <%=f.label :price%> <%=f.text_field :price%>
-      <%=f.label :description%> <%=f.text_field :description%>
-      <%=f.label :subject%> <%=f.collection_select :subject_id, Subject.all, :id, :name%>
-      <%= f.submit "SAVE SERVICE"%>
-    <%end %>
-
-</div>
+  <%=render "layouts/service-form"  %>

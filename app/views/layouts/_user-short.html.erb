@@ -1,0 +1,18 @@
+<div class="user-short">
+  <h2><%=link_to user.name + " " + user.lastname, user_path(user.id) %></h2>
+  <%if student.services_of_student(teacher).count == 1 %>
+    <h3>Service: </h3>
+      <%=link_to student.services_of_student(teacher).first.name,
+                 service_path(student.services_of_student(teacher).first.id) %>
+  <%else %>
+    <h3>Services: <%= student.services_of_student(teacher).size %></h3>
+    <div class="hover-content">
+      <%student.services_of_student(teacher).each do |service| %>
+        <h4><%=link_to service.name, service_path(service.id) %></h4>
+      <%end %>
+    </div>
+  <%end%>
+</div>
+
+
+

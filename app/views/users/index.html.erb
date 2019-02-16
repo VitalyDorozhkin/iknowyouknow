@@ -1,57 +1,7 @@
 <%@users.each do |u| %>
   <div>
-    <h2><%=link_to u.name + " " + u.lastname, user_path(u.id)%></h2>
-    <h3>Age: <%=u.age%></h3>
-    <h3>Rating:<%=u.rating%></h3>
-    <h3>Awargs<%=u.awards%></h3>
-    <h3>Email<%=u.email%></h3>
-    <h3>Phone<%=u.phone%></h3>
-    <h3>Description<%=u.description%></h3>
-    <%if u.services.size > 1 %>
-      <div class="hover-block">
-        <h3>Services: <%= u.services.size%></h3>
-        <div class="hover-content">
-          <%u.services.each do |s| %>
-            <%= link_to s.name, service_path(s.id) %>
-          <%end %>
-        </div>
-      </div>
-    <%elsif u.services.size == 1%>
-      <h3>Service: <%= link_to u.services.first.name, service_path(u.services.first)%></h3>
-    <%end %>
-
-    <%if @self_user.services_of_student(u).size > 1 %>
-      <div class="hover-block">
-        <h3>Services you use: <%=@self_user.services_of_student(u).size%></h3>
-        <div class="hover-content">
-          <%@self_user.services_of_student(u).each do |s|%>
-            <%= link_to s.name, service_path(s.id) %>
-          <%end%>
-        </div>
-      </div>
-    <%elsif @self_user.services_of_student(u).size == 1 %>
-      <h3>Service you use:
-        <%= link_to @self_user.services_of_student(u).first.name,
-                    service_path(@self_user.services_of_student(u).first.id) %>
-      </h3>
-    <%end %>
-
-    <%if u.services_of_student(@self_user).size > 1 %>
-      <div class="hover-block">
-        <h3>Your services: <%=u.services_of_student(@self_user).size%></h3>
-        <div class="hover-content">
-          <%u.services_of_student(@self_user).each do |s|%>
-            <%= link_to s.name, service_path(s.id) %>
-          <%end%>
-        </div>
-      </div>
-    <%elsif u.services_of_student(@self_user).size == 1 %>
-      <h3>Your service:
-        <%= link_to u.services_of_student(@self_user).first.name,
-                    service_path(u.services_of_student(@self_user).first.id) %>
-      </h3>
-    <%end %>
-
+    <%= render "layouts/user-info", user: u%>
+    <%= render "layouts/user-services", user: u %>
 
 
   </div>

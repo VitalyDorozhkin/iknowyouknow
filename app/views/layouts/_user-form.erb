@@ -1,0 +1,24 @@
+<%= form_for @user do |f| %>
+
+
+  <% if @user.errors.any? %>
+    <%@user.errors.full_messages.each do |m| %>
+      <div class="alert"><%=m%></div>
+    <%end%>
+  <%end %>
+
+
+  <%=f.label :name%> <%=f.text_field :name%>
+  <%=f.label :lastname%> <%=f.text_field :lastname%>
+  <%=f.label :age%> <%=f.text_field :age%>
+  <br>
+  <%=f.label :email%> <%=f.text_field :email%>
+  <%=f.label :phone%> <%=f.text_field :phone%>
+  <%=f.label :login%> <%=f.text_field :login%>
+  <%=f.label :password%> <%=f.text_field :password%>
+  <br>
+  <%=f.label :description%> <%=f.text_field :description%>
+  <%=f.file_field :avatar %>
+  <%= f.submit "SAVE USER"%>
+<%end %>
+

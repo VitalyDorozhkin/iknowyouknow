@@ -1,0 +1,8 @@
+<h2><%=link_to user.name + " " + user.lastname, user_path(user.id)%></h2>
+<%= image_tag user.avatar if user.avatar.attached?%>
+<h3>Age: <%=user.age%></h3>
+<h3>Rating:<%=user.rating%></h3>
+<h3>Awargs<%=user.awards%></h3>
+<h3>Email<%=user.email%></h3>
+<h3>Phone<%=user.phone%></h3>
+<h3>Description<%=user.description%></h3>

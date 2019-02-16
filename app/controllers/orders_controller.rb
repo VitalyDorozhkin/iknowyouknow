@@ -1,10 +1,10 @@
 class OrdersController < ApplicationController
   before_action :check_login
   def index
-    if params[:sort] == "teacher"
+    if params[:sort] == "i_use"
       @orders = User.find_by_id(@self_user).teacher_orders
 
-    elsif params[:sort] == "student"
+    elsif params[:sort] == "my"
       @orders = User.find_by_id(@self_user).orders
     elsif admin?
       @orders = Order.all

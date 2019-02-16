@@ -1,0 +1,33 @@
+<%service_type ||= nil%>
+<h2><%=link_to service.name, service_path(service.id) %></h2>
+<h3>Description: <%= service.description%> </h3>
+<h3>Subject: <%=service.subject.name %></h3>
+<h3>Category: <%=service.category.name %></h3>
+<h3>Price:<%=service.price %></h3>
+
+<%if service.teacher !=  @self_user %>
+  <h3>Teacher:<%=link_to service.teacher.name + " " + service.teacher.lastname, user_path(service.teacher.id) %></h3>
+<%else%>
+  <%if service.teacher ==  @self_user%>
+    <%if service.student_ids.size > 1 %>
+      <h3>Students: <%= service.student_ids.size %></h3>
+      <div class="hover-content">
+        <%service.students.each do |student|%>
+          <h4><%=link_to student.name + " " + student.lastname, user_path(student.id)%></h4>
+        <%end%>
+      </div>
+    <% elsif service.student_ids.size == 1 %>
+      <h3>Student: <%=link_to service.students.first.name + " " + service.students.first.lastname%> </h3>
+    <% else %>
+      <h3>No Students Yet</h3>
+    <%end%>
+  <%elsif service.student_ids.size > 0%>
+    <h3>Students: <%= service.student_ids.size %></h3>
+  <%else%>
+    <h3>No students yet</h3>
+  <%end%>
+
+<%end %>
+
+
+

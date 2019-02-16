@@ -1,0 +1,25 @@
+
+<%with_admin ||= false %>
+
+<h2><%=link_to subject.name, subject_path(subject.id) %></h2>
+<h2>Category: <%= link_to subject.category.name, category_path(subject.category_id)%> </h2>
+
+<h2>Description: <%= subject.description%> </h2>
+<%if @self_user.admin? && with_admin%>
+  <%= link_to "EDIT", edit_subject_path(subject.id) %>
+  <%= link_to "DELETE", subject_path(subject.id), method: "DELETE" %>
+<%end %>
+<br>
+
+
+<div class="hover-block">
+  <h3>Services: <%=subject.services.size%></h3>
+  <div class="hover-content">
+    <%subject.services.each do |service|%>
+      <%= render "layouts/service", service: service %>
+    <%end %>
+  </div>
+</div>
+
+
+

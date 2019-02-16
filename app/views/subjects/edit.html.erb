@@ -1,24 +1,3 @@
+<h1><%=link_to subject.name, subject_path(subject.id) %></h1>
 
-<h1 class="auto-margin"><%=@subject.name %> Edit</h1>
-
-<div class="auto-margin">
-
-  <%= form_for @subject do |f| %>
-
-    <% if @subject.errors.any? %>
-      <%@subject.errors.full_messages.each do |m| %>
-        <div class="alert"><%=m%></div>
-      <%end%>
-    <%end %>
-
-
-    <%=f.label :name%> <%=f.text_field :name%>
-    <%=f.label :description%> <%=f.text_field :description%>
-    <%=f.label :category%> <%=f.collection_select :category_id, Category.all, :id, :name%>
-
-    <%= f.submit "SAVE SERVICE"%>
-  <%end %>
-
-
-
-</div>
+<%= render "layouts/subject", subject: @subject %>

@@ -2,14 +2,21 @@ class ServicesController < ApplicationController
   before_action :check_login
   before_action :teacher?, only:[:edit, :update, :destroy]
   def index
-
-    if params[:sort] == "my_services"
+    sort_direction = params[:sort_order] || "desc"
+    sort_field = params[:sort] || "id"
+    sort_field = "created_at" if sort_field == "date"
+    if params[:type] == "my"
       @services = @self_user.services
-    elsif params[:sort] == "services_for_me"
+    elsif params[:type] == "i_use"
       @services = @self_user.student_services
     else
       @services = Service.all.where("teacher_id != #{@self_user.id}")
     end
+    @services = @services.where()
+    @services = @services.order(sort_field => sort_direction)
+
+
+
   end
   def new
     @service = Service.new

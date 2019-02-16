@@ -1,42 +1,65 @@
 <nav>
   <ul class="navigation">
-    <li>
-      <%=link_to "IKNOWYOUKNOW", root_path, class: "logo" %>
-    </li>
+    <li><%=link_to "IKNOWYOUKNOW", root_path, class: "logo" %></li>
 
 
-  <%if current_user%>
+    <%if current_user%>
+
       <li>
-        <%=link_to "Services", services_path%>
+        <%=link_to "Orders", orders_path%>
         <ul>
-          <li><%=link_to "new service", new_service_path%></li>
-          <li><%=link_to "My services", services_path(sort: "my_services")%></li>
-          <li><%=link_to "Services for me", services_path(sort: "services_for_me")%></li>
+          <li><%=link_to "My Orders", orders_path(sort: "my")%></li>
+          <li><%=link_to "Orders for Me", orders_path(sort: "i_use")%></li>
         </ul>
       </li>
-      <li>
-        <%=link_to @self_user.name + " " + @self_user.lastname, user_path(@self_user.id)  %>
-        <ul>
-          <li><%=link_to "My teachers", users_path(sort: "my_teachers")%></li>
-          <li><%=link_to "My students", users_path(sort: "my_students")%></li>
-          <li><%=link_to "sign_out", sign_out_path%></li>
-          <% if @self_user.admin?%>
-            <li>
-              ROOTS
-              <ul>
-                <li><%=link_to "New Subject", new_subject_path%></li>
-                <li><%=link_to "New Category", new_category_path%></li>
-                <li><%=link_to "Orders", orders_path%></li>
-              </ul>
-            </li>
 
-            <%end %>
-        </ul>
-      </li>
-  <%else %>
-    <li><%=link_to "sign_up", sign_up_path%></li>
-    <li><%=link_to "registration", new_user_path%></li>
-  <%end %>
+        <li>
+          <%=link_to "Subjects", subjects_path%>
+          <ul>
+            <li><%=link_to "My Subjects", subjects_path(sort: "my")%></li>
+            <li><%=link_to "Subjects I use", subjects_path(sort: "i_use")%></li>
+          </ul>
+        </li>
+
+        <li>
+          <%=link_to "Categories", categories_path%>
+          <ul>
+            <li><%=link_to "My Categoties", categories_path(sort: "my")%></li>
+            <li><%=link_to "Categoties I use", categories_path(sort: "i_use")%></li>
+          </ul>
+        </li>
+
+        <li>
+          <%=link_to "Services", services_path%>
+          <ul>
+            <li><%=link_to "New service", new_service_path%></li>
+            <li><%=link_to "My services", services_path(type: "my")%></li>
+            <li><%=link_to "Services I use", services_path(type: "i_use")%></li>
+          </ul>
+        </li>
+        <li>
+          <%=link_to @self_user.name + " " + @self_user.lastname, user_path(@self_user.id)  %>
+          <ul>
+            <li><%=link_to "My teachers", users_path(sort: "my_teachers")%></li>
+            <li><%=link_to "My students", users_path(sort: "my_students")%></li>
+            <li><%=link_to "sign_out", sign_out_path%></li>
+            <% if @self_user.admin?%>
+              <li>
+                ROOTS
+                <ul>
+                  <li><%=link_to "New Subject", new_subject_path%></li>
+                  <li><%=link_to "New Category", new_category_path%></li>
+                  <li><%=link_to "Orders", orders_path%></li>
+                </ul>
+              </li>
+
+              <%end %>
+          </ul>
+        </li>
+    <%else %>
+      <li><%=link_to "sign_up", sign_up_path%></li>
+      <li><%=link_to "registration", new_user_path%></li>
+    <%end %>
 
   </ul>
 </nav>

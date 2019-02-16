@@ -1,7 +1,13 @@
 class CategoriesController < ApplicationController
-  before_action :admin?, only:[:new, :create, :edit, :update]
+  before_action :admin?, only:[:new, :create, :edit, :update, :destroy]
   def index
-    @categories = Category.all
+    if params[:sort] == "my"
+      @categories  = @self_user.teacher_categories
+    elsif params[:sort] == "i_use"
+      @categories = @self_user.student_categories
+    else
+      @categories = Category.all
+    end
   end
   def new
     @category = Category.new

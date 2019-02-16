@@ -116,5 +116,16 @@ a:hover{
     transform: scale(1.02);
     transition: 400ms;
 }
+.field_with_errors input{
+    display: inline-block;
+    border: 1px solid red;
+}
+.field_with_errors {
+    display: inline-block;
+}
+
+
+
+
 
 

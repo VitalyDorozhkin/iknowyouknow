@@ -1,0 +1,147 @@
+
+
+
+<%other_services = user.other_services @self_user %>
+<%you_use_services = @self_user.services_of_student(user) %>
+
+
+
+
+<%if user.services.size > 1 %>
+  <div class="hover-block">
+
+      <%if other_services.size > 0 && you_use_services.size > 0 %>
+        <h2>Services</h2>
+        <div class="hover-content">
+          <%if you_use_services.size > 1 %>
+            <div class="hover-block">
+              <h3>Services you use: <%=you_use_services.size%></h3>
+              <div class="hover-content">
+                <%you_use_services.each do |s|%>
+                  <%= link_to s.name, service_path(s.id) %>
+                <%end%>
+              </div>
+            </div>
+          <%elsif you_use_services.size == 1 %>
+            <h3>Service you use:
+              <%= link_to you_use_services.first.name,
+                          service_path(you_use_services.first.id) %>
+            </h3>
+          <%end %>
+          <%if other_services.size > 1 %>
+            <div class="hover-block">
+              <h3>Other services: <%= other_services.size%></h3>
+              <div class="hover-content">
+                <%other_services.each do |s| %>
+                  <%= link_to s.name, service_path(s.id) %>
+                <%end %>
+              </div>
+            </div>
+          <%elsif other_services.size == 1%>
+            <h3>Other service: <%= link_to other_services.first.name, service_path(other_services.first)%></h3>
+          <%end %>
+        </div>
+      <%elsif other_services.size > 0 %>
+        <div class="hover-block">
+          <h3>Services: <%= other_services.size%></h3>
+          <div class="hover-content">
+            <%other_services.each do |s| %>
+              <%= link_to s.name, service_path(s.id) %>
+            <%end %>
+          </div>
+        </div>
+      <%else %>
+        <div class="hover-block">
+          <h3>Services you use: <%=you_use_services.size%></h3>
+          <div class="hover-content">
+            <%you_use_services.each do |s|%>
+              <%= link_to s.name, service_path(s.id) %>
+            <%end%>
+          </div>
+        </div>
+      <%end %>
+
+  </div>
+
+<%elsif you_use_services.size == 1 %>
+  <h3>Service you use: <%= link_to you_use_services.first.name, service_path(you_use_services.first.id) %> </h3>
+<%elsif other_services.size == 1%>
+  <h3>Service: <%= link_to other_services.first.name, service_path(other_services.first)%></h3>
+<%end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%if user.services_of_student(@self_user).size > 1 %>
+  <div class="hover-block">
+    <h3>Your services: <%=user.services_of_student(@self_user).size%></h3>
+    <div class="hover-content">
+      <%user.services_of_student(@self_user).each do |s|%>
+        <%= link_to s.name, service_path(s.id) %>
+      <%end%>
+    </div>
+  </div>
+<%elsif user.services_of_student(@self_user).size == 1 %>
+  <h3>Your service:
+    <%= link_to user.services_of_student(@self_user).first.name,
+                service_path(user.services_of_student(@self_user).first.id) %>
+  </h3>
+<%end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

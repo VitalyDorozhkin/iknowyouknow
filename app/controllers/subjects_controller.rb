@@ -1,6 +1,13 @@
 class SubjectsController < ApplicationController
+  before_action :admin?, only:[:new, :create, :edit, :update, :destroy]
   def index
-    @subjects = Subject.all
+    if params[:sort] == "my"
+      @subjects = @self_user.teacher_subjects
+    elsif params[:sort] == "i_use"
+      @subjects = @self_user.student_subjects
+    else
+      @subjects = Subject.all
+    end
   end
   def new
     @subject = Subject.new
