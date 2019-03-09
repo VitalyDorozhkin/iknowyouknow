@@ -1,4 +1,5 @@
 <%= render "layouts/user-info", user: @user%>
+<%puts %>
 <h6>login: <%=@user.login%></h6>
 <h6>password: <%=@user.password%></h6>
 <%if @user.id == current_user %>
@@ -10,17 +11,14 @@
   <%= link_to "Orders to you", orders_path(sort: "teacher") %>
 <%end %>
 
-
-
 <div class="flex">
     <div class="hover-block">
     <h1>Services</h1>
     <div class="hover-content">
       <%if @user.services.size > 0 %>
-        <%@user.services.each  do |service|%>
-          <%= render 'layouts/service', service: service, service_type:"my_service" %>
-        <% end %>
-      <%elsif @user == @self_user %>
+        <%= render "layouts/services_sort-form", type: 'my'%>
+        <div class="services"></div>
+    <%elsif @user == @self_user %>
         <h2>You have no services! <%=link_to "Create New Service", new_service_path%> NOW!</h2>
       <%else %>
         <h2>Sorry, there are no services</h2>
@@ -28,11 +26,8 @@
     </div>
   </div>
 
-
   <%if @user ==  @self_user%>
-
     <%if @user.students.size > 0 %>
-
       <div class="hover-block">
       <h1>Students</h1>
       <div class="hover-content">
@@ -47,9 +42,8 @@
       <div class="hover-block">
         <h1>Courses</h1>
         <div class="hover-content">
-          <%@user.student_services.each  do |service|%>
-            <%= render 'layouts/service', service: service, service_type:"my_course" %>
-          <% end %>
+          <%= render "layouts/services_sort-form", type: 'i_use'%>
+          <div class="services"></div>
         </div>
       </div>
     <%end %>
@@ -67,3 +61,37 @@
 
   <%end %>
 </div>
+
+<script>
+    function formAjaxQuery(e, type) {
+        if(e.tagName!=='FORM'){
+            let url = type === 'services' ? '/services-short' : '/users-short' ;
+
+            $.ajax({
+                url: url,
+                method: "GET",
+                data: $(e).closest('form').serialize(),
+                success: (data) => {
+                    $(e).closest('form').next().html(data);
+                }
+            });
+        }
+
+    }
+
+    document.querySelectorAll('form').forEach((form) => {
+      form.addEventListener('click', (e) => {formAjaxQuery(e.target, 'services')});
+  });
+
+
+    document.querySelectorAll('.services').forEach((serviceDiv) => {
+        serviceDiv.parentNode.parentNode.addEventListener(
+            'mouseenter',
+            (e) => {
+                formAjaxQuery(e.target.querySelector('input'), 'services');
+            }
+        );
+    });
+
+
+</script>

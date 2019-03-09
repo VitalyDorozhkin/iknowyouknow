@@ -1,38 +1,43 @@
 <h1>Services</h1>
 
-<%= form_with url: services_path, method: "GET", local: true do %>
-  <%= radio_button_tag(:type, "my") %>
-  <%= label_tag(:type_teacher, "I am Teacher") %>
-  <%= radio_button_tag(:type, "i_use") %>
-  <%= label_tag(:type_student, "I am Student") %>
-  <%= radio_button_tag(:type, "other", :checked) %>
-  <%= label_tag(:type_student, "Other") %>
-  <br>
-  <%= radio_button_tag(:sort, "id", :checked) %>
-  <%= label_tag(:sort_id, "Default") %>
-  <%= radio_button_tag(:sort, "rating") %>
-  <%= label_tag(:sort_rating, "Rating") %>
-  <%= radio_button_tag(:sort, "price") %>
-  <%= label_tag(:sort_price, "Price") %>
-  <%= radio_button_tag(:sort, "date") %>
-  <%= label_tag(:sort_date, "Publication date") %>
-
-  <br>
-  <%= radio_button_tag(:sort_order, "desc", :checked) %>
-  <%= label_tag(:sort_order_desc, "UP") %>
-  <%= radio_button_tag(:sort_order, "asc") %>
-  <%= label_tag(:sort_order_asc, "DOWN")%>
-
-  <%= submit_tag %>
-<% end %>
+<%= render 'layouts/services_sort-form', sort_type: @sort_type, subjects: @subjects, categories: @categories %>
+<div id="services">
+  <%= render partial:"layouts/services", locals: {services: @services} %>
+</div>
 
 
 
-<%@services.each  do |service|%>
+<script>
+    function formAjaxQuery(e, type) {
+        if(e.tagName!=='FORM'){
+            let url = type === 'services' ? '/services-short' : '/users-short' ;
 
-  <%= render "layouts/service", service: service %>
+            $.ajax({
+                url: url,
+                method: "GET",
+                data: $(e).closest('form').serialize(),
+                success: (data) => {
+                    $(e).closest('form').next().html(data);
+                }
+            });
+        }
 
-<%end %>
+    }
+
+    document.querySelectorAll('form').forEach((form) => {
+        form.addEventListener('click', (e) => {formAjaxQuery(e.target, 'services')});
+    });
 
 
+    document.querySelectorAll('.services').forEach((serviceDiv) => {
+        serviceDiv.parentNode.parentNode.addEventListener(
+            'mouseenter',
+            (e) => {
+                formAjaxQuery(e.target.querySelector('input'), 'services');
+            }
+        );
+    });
+
+
+</script>
 

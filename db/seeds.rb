@@ -8,11 +8,11 @@
 UserRole.create(status:"admin")
 UserRole.create(status:"user")
 
-User.create(name:"Vitaly", lastname: "Dorozhkin", age:17, login: "admin", password: "password", user_role: UserRole.find_by_status("admin"))
-User.create(name:"Vasiliy", lastname: "Sikorskiy", age:33, login: "Vasiliy", password: "password", user_role: UserRole.find_by_status("user"))
-User.create(name:"Petr", lastname: "First", age:33, login: "Petr1", password: "First", user_role: UserRole.find_by_status("user"))
-User.create(name:"Petr", lastname: "Second", age:33, login: "Petr2", password: "Second", user_role: UserRole.find_by_status("user"))
-User.create(name:"Petr", lastname: "Third", age:33, login: "Petr3", password: "Third", user_role: UserRole.find_by_status("user"))
+User.create(name:"Vitaly", lastname: "Dorozhkin", age:17, login: "admin", password: "password", user_role: UserRole.find_by_status("admin"), phone: 88005553535, email:"email@google.com")
+User.create(name:"Vasiliy", lastname: "Sikorskiy", age:33, login: "Vasiliy", password: "password", user_role: UserRole.find_by_status("user"), phone: 88005553535, email:"email@google.com")
+User.create(name:"Petr", lastname: "First", age:33, login: "Petr1", password: "First", user_role: UserRole.find_by_status("user"), phone: 88005553535, email:"email@google.com")
+User.create(name:"Petr", lastname: "Second", age:33, login: "Petr2", password: "Second", user_role: UserRole.find_by_status("user"), phone: 88005553535, email:"email@google.com")
+User.create(name:"Petr", lastname: "Third", age:33, login: "Petr3", password: "Third", user_role: UserRole.find_by_status("user"), phone: 88005553535, email:"email@google.com")
 
 Category.create(name:"IT")
 Category.create(name:"Business")

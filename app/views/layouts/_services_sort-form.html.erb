@@ -1,0 +1,48 @@
+<%type ||= nil %>
+<%subjects = nil%>
+<%categories = nil%>
+<%= form_with do %>
+  <%if type == 'my' %>
+    <%= hidden_field_tag(:type, "my") %>
+  <%elsif type == 'i_use'%>
+    <%= hidden_field_tag(:type, "i_use") %>
+  <%else %>
+    <label><%= radio_button_tag(:type, "all", sort_type == 'all' ? :checked : false) %>All</label>
+    <label><%= radio_button_tag(:type, "my", sort_type == 'my' ? :checked : false) %>I am Teacher</label>
+    <label><%= radio_button_tag(:type, "i_use", sort_type == 'i_use' ? :checked : false) %>I am Student</label>
+    <label><%= radio_button_tag(:type, "other", sort_type == 'other' ? :checked : false) %>Other</label>
+    <br>
+  <%end %>
+
+  <label><%= radio_button_tag(:sort, "price", :checked) %>Price</label>
+  <label><%= radio_button_tag(:sort, "rating") %>Rating</label>
+  <label><%= radio_button_tag(:sort, "date") %>Publication date</label>
+  <br>
+  <label><%= radio_button_tag(:sort_order, "desc", :checked) %>UP</label>
+  <label><%= radio_button_tag(:sort_order, "asc") %>DOWN</label>
+
+
+  <%if categories %>
+    <div class="hover-block categories">
+      <h2>AAA</h2>
+      <div class="hover-content">
+        <%categories.each do |c| %>
+          <label><input type="checkbox" name="categories[]" value="<%=c.id %>"><%=c.name%></label>
+        <%end %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="subjects">
+    <%if subjects %>
+      <div class="hover-block">
+        <h2>AAA</h2>
+        <div class="hover-content">
+          <%subjects.each do |s| %>
+            <label><input type="checkbox" name="subject[]" value="<%=s.id %>"><%=s.name%></label>
+          <%end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
