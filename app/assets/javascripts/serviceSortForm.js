@@ -1,0 +1,45 @@
+window.onload = () => {
+    function formAjaxQuery(e, type) {
+
+        if(e.getAttribute('name') === 'categories[]'){
+            let url = '/services-form';
+            $.ajax({
+                url: url,
+                method: "GET",
+                data: $('input[type="checkbox"]', $(e).closest('.categories')).serialize(),
+                success: (data) => {
+                    if($(e).closest('.categories').next().hasClass('subjects')){
+                        $(e).closest('.categories').next().remove();
+                    }
+                    $(e).closest('.categories').after(data);
+                }
+            });
+        }
+
+        if(e.tagName!=='FORM'){
+            let url = type === 'services' ? '/services-short' : '/users-short' ;
+            $.ajax({
+                url: url,
+                method: "GET",
+                data: $(e).closest('form').serialize(),
+                success: (data) => {
+                    $(e).closest('form').next().html(data);
+                }
+            });
+        }
+    }
+
+    document.querySelectorAll('form').forEach((input) => {
+        input.addEventListener('change', (e) => {formAjaxQuery(e.target, 'services');});
+    });
+
+
+    document.querySelectorAll('.services').forEach((serviceDiv) => {
+        serviceDiv.parentNode.parentNode.addEventListener(
+            'mouseenter',
+            (e) => {
+                formAjaxQuery(e.target.querySelector('input'), 'services');
+            }
+        );
+    });
+};
