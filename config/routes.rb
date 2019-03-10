@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   post "sign_up", to:"users#check"
   get "sign_out", to:"users#sign_out"
   get "services-short", to:"services#index_short"
+  get "services-form", to:"services#form"
 end

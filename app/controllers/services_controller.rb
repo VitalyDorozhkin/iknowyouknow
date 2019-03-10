@@ -13,28 +13,10 @@ class ServicesController < ApplicationController
       @sort_field = "created_at"
     end
 
-    ###############
-    @subjects = []
-    @categories = []
-    if !params[:categories]
-      @categories = Category.all
-    else
-      params[:categories].each do |c|
-        @categories.push(Category.find(c))
-      end
-    end
-    if !params[:subjects]
-      @categories.each do |c|
-        c.subjects.each do |s|
-          @subjects.push(s)
-        end
-      end
-    else
-      params[:subjects].each do |s|
-        @subjects.push(Subject.find(s))
-      end
-    end
-    ################
+    get_subjects
+    puts @subjects
+    @current_subjects = @subjects
+    @current_subjects ||= Subject.all
 
 
     if @sort_type == "my"
@@ -48,6 +30,7 @@ class ServicesController < ApplicationController
     else
       @services = Service.all.where(teacher_id: @sort_type)
     end
+    @services = @services.where(subject: @current_subjects);
     @services = @services.order(@sort_field => @sort_direction)
   end
 
@@ -57,12 +40,44 @@ class ServicesController < ApplicationController
   end
 
 
+
+  def form
+    get_subjects
+    render partial:"layouts/services_subjects-form", locals: {subjects: @subjects}
+  end
+
+  def get_subjects
+    @subjects = []
+    @categories = []
+
+    if !params[:categories]
+      @categories = Category.all
+    else
+      params[:categories].each do |c|
+        @categories.push(Category.find(c))
+      end
+    end
+    puts params[:subjects]
+    if params[:subjects]
+      params[:subjects].each do |s|
+        @subjects.push(Subject.find(s))
+      end
+    elsif params[:categories]
+      @categories.each do |c|
+        c.subjects.each do |s|
+          @subjects.push(s)
+        end
+      end
+    else
+      @subjects = nil
+    end
+  end
+
   def new
     @service = Service.new
   end
 
   def create
-
     @service = Service.create(
         name: params[:service][:name],
         price: params[:service][:price],

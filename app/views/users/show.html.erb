@@ -16,7 +16,11 @@
     <h1>Services</h1>
     <div class="hover-content">
       <%if @user.services.size > 0 %>
-        <%= render "layouts/services_sort-form", type: 'my'%>
+        <%categories = [] %>
+        <%@user.services.each do |s|%>
+          <%categories.push(s.subject.category) %>
+        <%end %>
+        <%= render "layouts/services_sort-form", type: 'my', categories: categories.uniq%>
         <div class="services"></div>
     <%elsif @user == @self_user %>
         <h2>You have no services! <%=link_to "Create New Service", new_service_path%> NOW!</h2>
@@ -42,7 +46,11 @@
       <div class="hover-block">
         <h1>Courses</h1>
         <div class="hover-content">
-          <%= render "layouts/services_sort-form", type: 'i_use'%>
+          <%categories = [] %>
+          <%@user.student_services.each do |s|%>
+            <%categories.push(s.subject.category) %>
+          <%end %>
+          <%= render "layouts/services_sort-form", type: 'i_use', categories: categories.uniq%>
           <div class="services"></div>
         </div>
       </div>
@@ -61,12 +69,26 @@
 
   <%end %>
 </div>
-
 <script>
     function formAjaxQuery(e, type) {
+
+        if(e.getAttribute('name') === 'categories[]'){
+            let url = '/services-form';
+            $.ajax({
+                url: url,
+                method: "GET",
+                data: $('input[type="checkbox"]', $(e).closest('.categories')).serialize(),
+                success: (data) => {
+                    if($(e).closest('.categories').next().hasClass('subjects')){
+                        $(e).closest('.categories').next().remove();
+                    }
+                    $(e).closest('.categories').after(data);
+                }
+            });
+        }
+
         if(e.tagName!=='FORM'){
             let url = type === 'services' ? '/services-short' : '/users-short' ;
-
             $.ajax({
                 url: url,
                 method: "GET",
@@ -76,12 +98,11 @@
                 }
             });
         }
-
     }
 
-    document.querySelectorAll('form').forEach((form) => {
-      form.addEventListener('click', (e) => {formAjaxQuery(e.target, 'services')});
-  });
+    document.querySelectorAll('form').forEach((input) => {
+        input.addEventListener('change', (e) => {console.log(e);formAjaxQuery(e.target, 'services')});
+    });
 
 
     document.querySelectorAll('.services').forEach((serviceDiv) => {
@@ -92,6 +113,6 @@
             }
         );
     });
-
-
 </script>
+
+

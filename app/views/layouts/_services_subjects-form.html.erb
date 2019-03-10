@@ -1,0 +1,13 @@
+<%subjects ||= nil %>
+<%if subjects %>
+  <div class="subjects hover-block">
+    <h3>Subjects</h3>
+    <div class="hover-content">
+      <%subjects.each do |s| %>
+        <label>
+          <input type="checkbox" name="subjects[]" value="<%=s.id %>"><%=s.name%>
+        </label>
+      <%end %>
+    </div>
+  </div>
+<% end %>

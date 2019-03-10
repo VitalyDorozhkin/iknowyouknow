@@ -1,6 +1,6 @@
 <%type ||= nil %>
-<%subjects = nil%>
-<%categories = nil%>
+<%subjects ||= nil%>
+<%categories ||= nil%>
 <%= form_with do %>
   <%if type == 'my' %>
     <%= hidden_field_tag(:type, "my") %>
@@ -24,25 +24,15 @@
 
   <%if categories %>
     <div class="hover-block categories">
-      <h2>AAA</h2>
+      <h3>Categories</h3>
       <div class="hover-content">
         <%categories.each do |c| %>
-          <label><input type="checkbox" name="categories[]" value="<%=c.id %>"><%=c.name%></label>
+          <label><input type="checkbox" name="categories[]" value="<%=c.id %>" > <%=c.name%></label>
         <%end %>
       </div>
     </div>
   <% end %>
 
-  <div class="subjects">
-    <%if subjects %>
-      <div class="hover-block">
-        <h2>AAA</h2>
-        <div class="hover-content">
-          <%subjects.each do |s| %>
-            <label><input type="checkbox" name="subject[]" value="<%=s.id %>"><%=s.name%></label>
-          <%end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <%=render 'layouts/services_subjects-form', subjects: subjects %>
+
 <% end %>
