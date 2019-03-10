@@ -4,9 +4,8 @@
     <h3>Subjects</h3>
     <div class="hover-content">
       <%subjects.each do |s| %>
-        <label>
-          <input type="checkbox" name="subjects[]" value="<%=s.id %>"><%=s.name%>
-        </label>
+        <label><input type="checkbox" name="subjects[]" value="<%=s.id %>"><%=s.name%></label>
+        <br>
       <%end %>
     </div>
   </div>

@@ -35,6 +35,10 @@ ul, li{
     align-items: flex-start;
 }
 
+.flex-column{
+    flex-direction: column;
+}
+
 
 .navigation{
     display: flex;
@@ -69,7 +73,6 @@ ul, li{
 .hover-block {
     display: inline-block;
 
-
 }
 .hover-content{
     max-height: 0;
@@ -78,6 +81,11 @@ ul, li{
     display: inline-block;
     border: 1px solid white;
 }
+
+label{
+    display: inline-flex;
+}
+
 
 .flex > .hover-block > h1,
 .flex > .hover-block > h2,
